@@ -8,6 +8,6 @@
 </head>
 <%@ include file="../MAIN/header.jsp"%>
 <body>
-<h1>direction</h1>
+<h1>directions</h1>
 </body>
 </html>
