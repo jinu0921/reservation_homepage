@@ -1,8 +1,8 @@
-package com.bitc.project.room.service;
+package com.bitc.project.reservation.service;
 
 import java.util.List;
 
-import com.bitc.project.room.vo.reserveVO;
+import com.bitc.project.reservation.vo.roomVO;
 
 public interface adminRoomService {
 	
@@ -11,14 +11,14 @@ public interface adminRoomService {
 	 *  모든 예약 정보 조회
 	 * 	
 	 */
-	List<reserveVO> viewAll() throws Exception;
+	List<roomVO> viewAll() throws Exception;
 	
 	/**
 	 *	대기중인
 	 *  모든 예약 정보 조회
 	 * 
 	 */
-	List<reserveVO> viewWaitingReservation() throws Exception;
+	List<roomVO> viewWaitingReservation() throws Exception;
 	
 	/**
 	 * 	예약 취소
