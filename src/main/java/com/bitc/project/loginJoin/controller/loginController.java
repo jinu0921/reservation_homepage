@@ -17,21 +17,16 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class loginController {
 
-
 	private final loginJoinServiceImpl ls;
 	
 	@GetMapping("login")
-	public void login() throws Exception {
-	}
+	public void login() throws Exception {}
 	
 	@GetMapping("join")
-	public void join() throws Exception {
-		
-	}
+	public void join() throws Exception {}
 	
 	@PostMapping("join")
 	public String join(loginJoinDTO dto) throws Exception {
-		System.out.println(dto);
 		System.out.println(ls.memberJoin(dto));
 		return "loginJoin/login";
 		
@@ -39,10 +34,14 @@ public class loginController {
 	
 	@PostMapping("login")
 	public String login(loginJoinDTO dto, HttpSession s) throws Exception {
-		System.out.println(dto);
 		System.out.println(ls.memberLogin(dto, s));
 		return "MAIN/main";
-		
+	}
+	
+	@GetMapping("logOut")
+	public String logOut(loginJoinDTO dto, HttpSession s) throws Exception {
+		s.invalidate();
+		return "MAIN/main";
 	}
 
 	

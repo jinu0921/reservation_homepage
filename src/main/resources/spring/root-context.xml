@@ -26,7 +26,7 @@
 		
 		
 		<!-- dao 쓸곳 더 필요하면 , 붙이고 경로적어서 쓰면돼용  -->
-		<mybatis-spring:scan base-package="com.bitc.*.loginJoin.dao"/>
+		<mybatis-spring:scan base-package="com.bitc.*.loginJoin.dao, com.bitc.*.review.dao"/>
 	
 	
 	</beans>
