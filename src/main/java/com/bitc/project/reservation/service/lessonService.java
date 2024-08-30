@@ -1,6 +1,6 @@
-package com.bitc.project.room.service;
+package com.bitc.project.reservation.service;
 
-import com.bitc.project.room.vo.lessonVO;
+import com.bitc.project.reservation.vo.lessonVO;
 
 public interface lessonService {
 

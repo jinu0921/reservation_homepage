@@ -1,4 +1,4 @@
-package com.bitc.project.room.controller;
+package com.bitc.project.reservation.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,27 +7,30 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.bitc.project.reservation.vo.roomVO;
+
 @Controller
-@RequestMapping("roomReg/")
+@RequestMapping("reservation/")
 public class roomController {
 	
 	@GetMapping("room")
 	public String room() {
-		return"/roomReg/room";
+		return"/reservation/room";
 	}
 	
 	
 	@GetMapping("check")
 	public String reg(){
 		
-		return"/roomReg/check";
+		return"/reservation/check";
 	}
 	
-	@PostMapping("reg")
-	public String reg(RedirectAttributes rttr){
+	@PostMapping("reservation")
+	public String reg(roomVO room,RedirectAttributes rttr){
 		
-		rttr.addFlashAttribute("msg","예약 성공");
+		System.out.println(room);
+		rttr.addFlashAttribute("msg","예약 성공"+room);
 		
-		return"redirect:/roomReg/check";
+		return"redirect:/reservation/check";
 	}
 }

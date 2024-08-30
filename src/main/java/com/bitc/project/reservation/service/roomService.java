@@ -1,6 +1,6 @@
-package com.bitc.project.room.service;
+package com.bitc.project.reservation.service;
 
-import com.bitc.project.room.vo.reserveVO;
+import com.bitc.project.reservation.vo.roomVO;
 
 public interface roomService {
 	
@@ -37,5 +37,5 @@ public interface roomService {
 	 *  @param 날짜, 선택한 연습실
 	 *  @return 예약 가능한 시간			현재시간 이후?
 	 */
-	reserveVO availability() throws Exception;
+	roomVO availability() throws Exception;
 }
