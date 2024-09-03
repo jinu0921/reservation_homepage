@@ -121,7 +121,7 @@ header ul hr{
 	<header>
 		<div class="flex">
 			<div class="mainLogo solid">
-				<a href="${path}/project">메인으로</a>
+				<a href="${path}">메인으로</a>
 			</div>
 		<div class="menuBar">
 

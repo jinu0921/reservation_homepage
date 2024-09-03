@@ -24,6 +24,8 @@ public class lessonController {
 		return "redirect:/";
 	}
 	
+	
+	
 	@GetMapping("myInformation2")
 	public void myInformation2() {
 		
