@@ -10,13 +10,22 @@
 }
 
 review_list li {
-	background-color:skyblue;
-	border: 1px solid black ;
-	width:30px;
+	background-color:white;
 	list-style-type: none;
 	display: inline-block;
-	margin:0;
+	margin:40px 0;
+	width:40px;
+	height:40px;
+	border-radius: 50%;
 }
+
+
+review_list li:hover {
+	cursor: pointer;
+	background-color: #ccc;
+	
+}
+
 
 review_list li a{
 text-decoration: none;
@@ -34,6 +43,43 @@ margin: auto 0;
 margin: 0 auto;
 }
 
+
+.review_list_paging ul{
+margin: 0 auto;
+width : 400px;
+}
+
+.review_list_paging ul li{
+	text-align: center;
+}
+
+.review_list_paging ul li a{
+	display:inline-block;
+	line-height:40px;
+	color: black;
+	font-weight: bold;
+	font-size: 15px;
+	width: 40px;
+}
+
+.review_currentPage {
+	background-color: #0067f3;
+}
+
+
+#review_currentPage_a{
+	color: white;
+}
+
+
+
+/* ----------------위로는 페이징 아래는 테이블 ---------------------- */
+
+
+
+
+
+
 </style>
 </head>
 <%@ include file="../MAIN/header.jsp"%>
@@ -42,7 +88,7 @@ margin: 0 auto;
 	<h1>
 		<a href="${path}/review/review_write">글쓰기</a>
 	</h1>
-	<table border="1" class="review_table">
+	<table class="review_table">
 		<tr>
 			<th>작성자</th>
 			<th>제목</th>
@@ -78,7 +124,7 @@ margin: 0 auto;
 			<c:forEach var="i" begin="${pm.startPage}" end="${pm.endPage}">
 				<c:choose>
 					<c:when test="${pm.cri.page eq i}">
-						<li class="currentPage"><a
+						<li class="review_currentPage"><a id="review_currentPage_a"
 							href="${path}/review/review_list?page=${i}">${i}</a></li>
 					</c:when>
 					<c:otherwise>
@@ -93,7 +139,6 @@ margin: 0 auto;
 			<c:if test="${pm.last}">
 				<li><a href="${path}/review/review_list?page=${pm.maxPage}">&gt;&gt;</a></li>
 			</c:if>
-
 		</ul>
 	</div>
 
