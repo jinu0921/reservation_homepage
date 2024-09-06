@@ -46,7 +46,7 @@ margin: 0 auto;
 
 .review_list_paging ul{
 margin: 0 auto;
-width : 400px;
+width : 500px;
 }
 
 .review_list_paging ul li{
@@ -66,7 +66,6 @@ width : 400px;
 	background-color: #0067f3;
 }
 
-
 #review_currentPage_a{
 	color: white;
 }
@@ -74,7 +73,10 @@ width : 400px;
 
 
 /* ----------------위로는 페이징 아래는 테이블 ---------------------- */
-
+.review_table tr{
+border-bottom: 10px solid black;
+height: 30px;
+}
 
 
 
@@ -124,8 +126,7 @@ width : 400px;
 			<c:forEach var="i" begin="${pm.startPage}" end="${pm.endPage}">
 				<c:choose>
 					<c:when test="${pm.cri.page eq i}">
-						<li class="review_currentPage"><a id="review_currentPage_a"
-							href="${path}/review/review_list?page=${i}">${i}</a></li>
+						<li class="review_currentPage"><a id="review_currentPage_a">${i}</a></li>
 					</c:when>
 					<c:otherwise>
 						<li><a href="${path}/review/review_list?page=${i}">${i}</a></li>

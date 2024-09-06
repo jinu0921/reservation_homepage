@@ -16,8 +16,8 @@
    		.rating input{
            display: none; 
            }
+           
 </style>
-
 <form method="POST">
 <input class="form-control" name="member_num" type="hidden" value="${member.member_num}"  />
 		<div>

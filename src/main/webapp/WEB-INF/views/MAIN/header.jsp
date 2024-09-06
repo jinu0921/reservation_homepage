@@ -179,8 +179,8 @@ header ul hr{
 		<div class="mainLogo solid">
 			<c:choose>
 				<c:when test="${!empty member}">
-					<h1>${member}</h1>
 					<a href="${path}/loginJoin/logOut">로그아웃</a>
+					<h1>${member}</h1>
 				</c:when>
 				<c:otherwise>
 					<a href="${path}/loginJoin/login">로그인</a>

@@ -26,6 +26,8 @@ public class reviewController {
 	
 	@GetMapping("review_list")
 	public void review_list(Criteria cri, Model model) {
+		// List<reviewVO> list = rs.getAllReview();
+		// model.addAttribute("list",list);
 		List<reviewVO> rv =  rs.getReview(cri);
 		PageMaker pm = rs.getPageMaker(cri);
 		System.out.println("rv:"+rv);
@@ -34,10 +36,14 @@ public class reviewController {
 		model.addAttribute("pm",pm);
 	}
 	
+	
+	
 	@GetMapping("review_detail")
 	public void review_detail(Model model, int review_num) {
 		model.addAttribute("reviewDetail",rs.detailReview(review_num));
 	}
+	
+	
 	
 	@GetMapping("review_write")
 	public String G_review_write(HttpSession s) {
@@ -49,11 +55,15 @@ public class reviewController {
 		}
 	}
 	
+	
+	
 	@PostMapping("review_write")
 	public String P_review_write(reviewVO rv, HttpSession s) {
 		System.out.println(rs.writeReview(rv));
 		return "redirect:/review/review_list";
 	}
+	
+	
 	
 	@GetMapping("review_update")
 	public String G_review_update(int review_num, Model model, HttpSession s) {
@@ -72,6 +82,8 @@ public class reviewController {
 			 return "redirect:/review/review_detail?review_num=" + review_num;
 		}
 	}
+	
+	
 	
 	@PostMapping("review_update")
 	public String P_review_update(reviewVO rv) {
