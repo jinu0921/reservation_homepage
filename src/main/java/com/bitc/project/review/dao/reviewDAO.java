@@ -11,7 +11,7 @@ import com.bitc.project.review.vo.reviewVO;
 
 public interface reviewDAO {
 
-	@Select("SELECT r.review_num, r.title, r.regdate, r.viewcnt, r.rating, m.nickname FROM review r "
+	@Select("SELECT r.review_num, r.title, r.content, r.regdate, r.viewcnt, r.rating, m.nickname FROM review r "
 			+ "NATURAL JOIN member m ORDER BY r.review_num DESC LIMIT #{startRow}, #{perPageNum}")
 	List<reviewVO> getReview(Criteria cri);
 	

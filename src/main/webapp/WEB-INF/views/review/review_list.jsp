@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,52 +11,47 @@
 }
 
 review_list li {
-	background-color:white;
+	background-color: white;
 	list-style-type: none;
 	display: inline-block;
-	margin:40px 0;
-	width:40px;
-	height:40px;
+	margin: 40px 0;
+	width: 40px;
+	height: 40px;
 	border-radius: 50%;
 }
-
 
 review_list li:hover {
 	cursor: pointer;
 	background-color: #ccc;
-	
 }
 
-
-review_list li a{
-text-decoration: none;
-display:inline-block;
-margin: auto 0;
+review_list li a {
+	text-decoration: none;
+	display: inline-block;
+	margin: auto 0;
 }
 
-.review_table{
-	height: 100px;
-	width: 1000px;
+.review_table {
+	width: 1250px;
 	margin: 0 auto;
 }
 
-.review_list_paging{
-margin: 0 auto;
+.review_list_paging {
+	margin: 0 auto;
 }
 
-
-.review_list_paging ul{
-margin: 0 auto;
-width : 500px;
+.review_list_paging ul {
+	margin: 0 auto;
+	width: 500px;
 }
 
-.review_list_paging ul li{
+.review_list_paging ul li {
 	text-align: center;
 }
 
-.review_list_paging ul li a{
-	display:inline-block;
-	line-height:40px;
+.review_list_paging ul li a {
+	display: inline-block;
+	line-height: 40px;
 	color: black;
 	font-weight: bold;
 	font-size: 15px;
@@ -66,21 +62,43 @@ width : 500px;
 	background-color: #0067f3;
 }
 
-#review_currentPage_a{
+#review_currentPage_a {
 	color: white;
 }
 
-
-
-/* ----------------위로는 페이징 아래는 테이블 ---------------------- */
-.review_table tr{
-border-bottom: 10px solid black;
-height: 30px;
+table {
+	border-collapse: collapse;
 }
 
+/* ----------------위로는 페이징 아래는 테이블 ---------------------- */
 
+.review_table tr {
+	border-bottom: 2px solid #aaaaaa;
+	height: 300px;
+	    display: flex;
+    justify-content: flex-start; /* 자식 요소들을 상단에 정렬 */
+}
 
+.review_table tr:hover{
+cursor: pointer;
+}
 
+.review_table tr:hover>td .review_title,
+.review_table tr:hover>td .review_content{
+	text-decoration: underline;
+}
+
+.review_table_left{
+width: 430px;
+padding-left:50px;
+padding-top:0px;
+}
+
+.review_nickname{
+    margin-top: 50px;
+font-weight: bold;
+height: 100px;
+}
 
 </style>
 </head>
@@ -91,23 +109,21 @@ height: 30px;
 		<a href="${path}/review/review_write">글쓰기</a>
 	</h1>
 	<table class="review_table">
-		<tr>
-			<th>작성자</th>
-			<th>제목</th>
-			<th>게시일</th>
-			<th>조회수</th>
-			<th>별점</th>
-		</tr>
-
 		<c:if test="${!empty reviewList}">
 			<c:forEach var="review" items="${reviewList}">
 
-				<tr onclick="detail('${review.review_num}');">
-					<td>${review.nickname}</td>
-					<td>${review.title}</td>
-					<td>${review.regdate}</td>
-					<td>${review.viewcnt}</td>
-					<td><c:forEach var="i" begin="1" end="${review.rating}">★</c:forEach>
+				<tr onclick="detail('${review.review_num}');" class="review_table_tr">
+					<td class="review_table_left">
+						<div class="review_nickname">${review.nickname}</div>
+						<div class="review_regdate"><fmt:formatDate value="${review.regdate}" pattern="yyyy-MM-dd" /></div>
+						</td>
+					<td class="review_table_right">
+						<div class="review_rating">
+							<c:forEach var="i" begin="1" end="${review.rating}">★</c:forEach>
+						</div>
+						<div class="review_title">${review.title}</div>
+						<div class="review_content">${review.content}</div>
+						<div class="review_viewcnt">${review.viewcnt}</div>
 					</td>
 				</tr>
 

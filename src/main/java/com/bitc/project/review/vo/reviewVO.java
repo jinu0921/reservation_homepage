@@ -1,6 +1,6 @@
 package com.bitc.project.review.vo;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 import lombok.Data;
 
@@ -10,7 +10,7 @@ public class reviewVO {
 		private int review_num;
 		private String title;
 		private String content;
-		private LocalDateTime regdate;
+		private Date regdate;
 		private int viewcnt;
 		private int Rating;
 		private String nickname;
