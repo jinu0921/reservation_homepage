@@ -15,5 +15,4 @@
 <a href="review_list">review_list</a> <br><br>
 <a href="roomReg/room">room</a> <br><br>
 
-
 <%@ include file="/WEB-INF/views/MAIN/footer.jsp"%>
