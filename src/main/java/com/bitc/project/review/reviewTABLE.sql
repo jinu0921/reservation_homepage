@@ -9,6 +9,6 @@
         rating int not null,
            FOREIGN KEY (member_num) REFERENCES member(member_num)
 	);
-        select * from review;
+        select * from review r NATURAL JOIN member m;
     drop table review;
     

@@ -17,7 +17,7 @@
 </style>
 
 <form method="POST">
-<input class="form-control" name="member_num" type="hidden" value="${member.member_num}"  />
+<input class="form-control" name="memberNum" type="hidden" value="${member.memberNum}"  />
 		<div>
 			<h1>리뷰 작성</h1>
 		</div>

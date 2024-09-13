@@ -6,8 +6,8 @@ import lombok.Data;
 
 @Data
 public class reviewVO {
-		private int member_num;
-		private int review_num;
+		private int memberNum;
+		private int reviewNum;
 		private String title;
 		private String content;
 		private Date regdate;

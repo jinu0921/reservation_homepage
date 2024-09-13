@@ -26,12 +26,8 @@ public class reviewController {
 	
 	@GetMapping("review_list")
 	public void review_list(Criteria cri, Model model) {
-		// List<reviewVO> list = rs.getAllReview();
-		// model.addAttribute("list",list);
 		List<reviewVO> rv =  rs.getReview(cri);
 		PageMaker pm = rs.getPageMaker(cri);
-		System.out.println("rv:"+rv);
-		System.out.println("pm:"+pm);
 		model.addAttribute("reviewList",rv);
 		model.addAttribute("pm",pm);
 	}
@@ -39,8 +35,13 @@ public class reviewController {
 	
 	
 	@GetMapping("review_detail")
-	public void review_detail(Model model, int review_num) {
-		model.addAttribute("reviewDetail",rs.detailReview(review_num));
+	public void review_detail(Model model, int reviewNum, Criteria cri) {
+		System.out.println(rs.detailReview(reviewNum)+"이진우존잘");
+		model.addAttribute("reviewDetail",rs.detailReview(reviewNum));
+		List<reviewVO> rv =  rs.getReview(cri);
+		PageMaker pm = rs.getPageMaker(cri);
+		model.addAttribute("reviewList",rv);
+		model.addAttribute("pm",pm);
 	}
 	
 	
@@ -57,8 +58,10 @@ public class reviewController {
 	
 	
 	
+	
 	@PostMapping("review_write")
 	public String P_review_write(reviewVO rv, HttpSession s) {
+		rv.setContent(rv.getContent().replace("\n", "<br>"));
 		System.out.println(rs.writeReview(rv));
 		return "redirect:/review/review_list";
 	}
@@ -66,20 +69,20 @@ public class reviewController {
 	
 	
 	@GetMapping("review_update")
-	public String G_review_update(int review_num, Model model, HttpSession s) {
-		reviewVO rv = rs.findReviewNum(review_num);
+	public String G_review_update(int reviewNum, Model model, HttpSession s) {
+		reviewVO rv = rs.findReviewNum(reviewNum);
 		loginJoinDTO ldt =  (loginJoinDTO) s.getAttribute("member");
 		if(ldt!=null) {
-		if(rv.getMember_num() == ldt.getMember_num()) {
+		if(rv.getMemberNum() == ldt.getMemberNum()) {
 		model.addAttribute("reviewUpdate", rv);
 		 return "review/review_update";
-		}else {
+		}else { 
 			System.out.println("너작성자아니잖아");
-			 return "redirect:/review/review_detail?review_num=" + review_num;
+			 return "redirect:/review/review_detail?reviewNum=" + reviewNum;
 		}
 		}else {
 			System.out.println("너로그인안햇잖아");
-			 return "redirect:/review/review_detail?review_num=" + review_num;
+			 return "redirect:/review/review_detail?reviewNum=" + reviewNum;
 		}
 	}
 	
@@ -92,20 +95,20 @@ public class reviewController {
 	}
 	
 	@PostMapping("review_delete")
-	public String P_review_delete(int review_num, HttpSession s) {
-		reviewVO rv = rs.findReviewNum(review_num);
+	public String P_review_delete(int reviewNum, HttpSession s) {
+		reviewVO rv = rs.findReviewNum(reviewNum);
 		loginJoinDTO ldt =  (loginJoinDTO) s.getAttribute("member");
 		if(ldt!=null) {
-			if(rv.getMember_num() == ldt.getMember_num()) {
+			if(rv.getMemberNum() == ldt.getMemberNum()) {
 				System.out.println(rs.deleteReview(rv));
 				return "redirect:/review/review_list";
 			}else {
 				System.out.println("너작성자아니잖아");
-				 return "redirect:/review/review_detail?review_num=" + review_num;
+				 return "redirect:/review/review_detail?reviewNum=" + reviewNum;
 			}
 		}else {
 			System.out.println("너로그인안햇잖아");
-			 return "redirect:/review/review_detail?review_num=" + review_num;
+			 return "redirect:/review/review_detail?reviewNum=" + reviewNum;
 		}
 	}
 }

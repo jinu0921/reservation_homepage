@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class loginJoinDTO {
-	private int member_num;
+	private int memberNum;
 	private String id;
 	private String password;
 	private String nickname;

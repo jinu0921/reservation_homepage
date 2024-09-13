@@ -25,11 +25,11 @@ public class reviewServiceImpl {
 			String message = (result == 1) ? "SUCCESS" : "FAILED";
 			return message;
 	}
-	public reviewVO detailReview(int review_num) {
-		return rd.detailReveiw(review_num);
+	public reviewVO detailReview(int reviewNum) {
+		return rd.detailReview(reviewNum);
 	}
-	public reviewVO findReviewNum(int review_num) {
-		return rd.findReviewNum(review_num);
+	public reviewVO findReviewNum(int reviewNum) {
+		return rd.findReviewNum(reviewNum);
 	}
 	public String updateReview(reviewVO rv) {
 		int result = rd.updateReview(rv);

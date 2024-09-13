@@ -180,7 +180,6 @@ header ul hr{
 			<c:choose>
 				<c:when test="${!empty member}">
 					<a href="${path}/loginJoin/logOut">로그아웃</a>
-					<h1>${member}</h1>
 				</c:when>
 				<c:otherwise>
 					<a href="${path}/loginJoin/login">로그인</a>
