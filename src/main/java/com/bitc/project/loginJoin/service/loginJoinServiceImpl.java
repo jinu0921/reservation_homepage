@@ -23,7 +23,7 @@ public class loginJoinServiceImpl{
 		String message = (result == 1) ? "SUCCESS" : "FAILED";
 		return message;
 		}else {
-			return "id중복 ㅇㅅㅇ";
+			return "아이디 중복입니다.";
 		}
 	}
 

@@ -188,6 +188,7 @@ font-weight: bold;
 
 </style>
 </head>
+
 <review_list>
 <body>
 		<a href="${path}/review/review_write" class='review_write_a'>
@@ -253,6 +254,13 @@ font-weight: bold;
 </body>
 </review_list>
 </html>
+<c:if test="${!empty msg}">
+    <script>
+        window.onload = function() {
+            alert('${msg}');
+        }
+    </script>
+</c:if>
 <script type="text/javascript">
 	function detail(rno) {
 		location.href = "${path}/review/review_detail?reviewNum=" + rno;

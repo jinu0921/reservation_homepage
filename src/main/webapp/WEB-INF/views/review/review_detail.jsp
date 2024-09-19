@@ -125,3 +125,10 @@ margin-top:17px;
 
 <%@ include file="/WEB-INF/views/review/review_list_content.jsp"%>
 <%@ include file="/WEB-INF/views/MAIN/footer.jsp"%>
+<c:if test="${!empty msg}">
+    <script>
+        window.onload = function() {
+            alert('${msg}');
+        }
+    </script>
+</c:if>

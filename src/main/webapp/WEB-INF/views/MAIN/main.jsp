@@ -16,3 +16,10 @@
 <a href="roomReg/room">room</a> <br><br>
 
 <%@ include file="/WEB-INF/views/MAIN/footer.jsp"%>
+<c:if test="${!empty msg}">
+    <script>
+        window.onload = function() {
+            alert('${msg}');
+        }
+    </script>
+</c:if>

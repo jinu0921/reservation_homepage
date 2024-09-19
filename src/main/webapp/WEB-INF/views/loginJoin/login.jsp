@@ -1,7 +1,13 @@
 	<%@ page language="java" contentType="text/html; charset=UTF-8"
 	    pageEncoding="UTF-8"%>
 	<%@ include file="/WEB-INF/views/MAIN/header.jsp"%>
-	
+	<c:if test="${!empty msg}">
+    <script>
+        window.onload = function() {
+            alert('${msg}');
+        }
+    </script>
+</c:if>
 	
 	<h1>로그인</h1>
 	
