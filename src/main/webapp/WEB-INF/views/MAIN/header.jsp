@@ -26,7 +26,7 @@ header {
 }
 
 .solid {
-	border: 1px solid white;
+	 // border: 1px solid white;
 	border-radius: 5px;
 	font-weight: bold;
 	background-color: rgba(0, 0, 0, 0.3);
@@ -136,7 +136,7 @@ header ul hr{
 				<div class="hiddenMenu solid">
 					<ul>
 						<li>학원 소개
-							<hr>
+						<br>
 						</li>
 						<li>교수진 소개</li>
 					</ul>
@@ -144,7 +144,7 @@ header ul hr{
 				<div class="hiddenMenu solid">
 					<ul>
 						<li>예약 하기
-							<hr>
+							<br>
 						</li>
 						<li>구경 하기</li>
 					</ul>
@@ -152,7 +152,7 @@ header ul hr{
 				<div class="hiddenMenu solid">
 					<ul>
 						<li>레슨 문의
-							<hr>
+							<br>
 						</li>
 						<li>학원 문의</li>
 					</ul>
@@ -160,7 +160,7 @@ header ul hr{
 				<div class="hiddenMenu solid">
 					<ul>
 						<li>새로운 소식
-							<hr>
+							<br>
 						</li>
 						<li>고객 리뷰</li>
 					</ul>
@@ -168,7 +168,7 @@ header ul hr{
 				<div class="hiddenMenu solid">
 					<ul>
 						<li>길 찾기
-							<hr>
+							<br>
 						</li>
 						<li>지도 보기</li>
 					</ul>
