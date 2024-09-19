@@ -7,11 +7,19 @@
 <title>Insert </title>
 </head>
 <body>
-<%@ include file="../MAIN/header.jsp"%>
+<%@ include file="/WEB-INF/views/MAIN/header.jsp"%>
 <h1>main</h1>
 <a href="direction">direction</a> <br><br>
 <a href="inform">inform</a> <br><br>
 <a href="lesson">lesson</a> <br><br>
 <a href="review_list">review_list</a> <br><br>
 <a href="roomReg/room">room</a> <br><br>
+
 <%@ include file="/WEB-INF/views/MAIN/footer.jsp"%>
+<c:if test="${!empty msg}">
+    <script>
+        window.onload = function() {
+            alert('${msg}');
+        }
+    </script>
+</c:if>

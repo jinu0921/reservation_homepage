@@ -18,15 +18,16 @@
 		<property name="username" value="${jdbc.username}"/>
 		<property name="password" value="${jdbc.password}"/>
 	</bean>	
+
 	
-		<bean id="factory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="ds"/>
-	</bean>
-	
-		
+		   <bean id="factory" class="org.mybatis.spring.SqlSessionFactoryBean">
+      <property name="dataSource" ref="ds"/>
+      <property name="configLocation" value="classpath:mybatis/MybatisConfig.xml"/>
+   </bean>
 		
 		<!-- dao 쓸곳 더 필요하면 , 붙이고 경로적어서 쓰면돼용  -->
-		<mybatis-spring:scan base-package="com.bitc.*.loginJoin.dao"/>
+		<mybatis-spring:scan base-package="com.bitc.*.loginJoin.dao, com.bitc.*.review.dao"/>
+	
 	
 	
 	</beans>

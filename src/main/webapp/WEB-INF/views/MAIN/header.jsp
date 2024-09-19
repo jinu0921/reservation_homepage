@@ -10,10 +10,10 @@
 </head>
 <style>
 body {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)),
-		/* 어두운 오버레이 */
-        url('/project/resources/piano.jpg');
-	background-color: #2c2c2c;
+/* 	background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), */
+/* 		/* 어두운 오버레이 */ */
+/*         url('/project/resources/piano.jpg'); */
+	background-color: #fff;
 	background-size: cover; /* 이미지가 화면을 덮도록 설정 */
 	background-repeat: no-repeat; /* 이미지 반복을 방지 */
 	background-position: center; /* 이미지 위치를 중앙으로 설정 */
@@ -121,7 +121,7 @@ header ul hr{
 	<header>
 		<div class="flex">
 			<div class="mainLogo solid">
-				<a href="${path}/project">메인으로</a>
+				<a href="${path}">메인으로</a>
 			</div>
 		<div class="menuBar">
 
@@ -162,7 +162,7 @@ header ul hr{
 						<li>새로운 소식
 							<hr>
 						</li>
-						<li>고객 리뷰</li>
+						<li><a href="${path}/review/review_list">고객 리뷰</a></li>
 					</ul>
 				</div>
 				<div class="hiddenMenu solid">
@@ -179,7 +179,7 @@ header ul hr{
 		<div class="mainLogo solid">
 			<c:choose>
 				<c:when test="${!empty member}">
-					<h1>${member}</h1>
+					<a href="${path}/loginJoin/logOut">로그아웃</a>
 				</c:when>
 				<c:otherwise>
 					<a href="${path}/loginJoin/login">로그인</a>

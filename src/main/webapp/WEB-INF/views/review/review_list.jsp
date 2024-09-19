@@ -1,13 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<%@ include file="../MAIN/header.jsp"%>
-<body>
-<h1>review_list</h1>
-</body>
-</html>
+<%@ include file="/WEB-INF/views/MAIN/header.jsp"%>
+
+<%@ include file="/WEB-INF/views/review/review_list_content.jsp"%>
+
+
+<%@ include file="/WEB-INF/views/MAIN/footer.jsp"%>
