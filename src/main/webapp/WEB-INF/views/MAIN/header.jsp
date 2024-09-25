@@ -1,198 +1,120 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="path" value="${pageContext.request.contextPath}" />
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>센텀 베토벤 피아노</title>
-</head>
 <style>
 body {
-/* 	background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), */
-/* 		/* 어두운 오버레이 */ */
-/*         url('/project/resources/piano.jpg'); */
-	background-color: #fff;
-	background-size: cover; /* 이미지가 화면을 덮도록 설정 */
-	background-repeat: no-repeat; /* 이미지 반복을 방지 */
-	background-position: center; /* 이미지 위치를 중앙으로 설정 */
-	background-attachment: fixed; /* 배경 이미지 고정 */
+	margin: 0px;
 }
 
-header {
-	width: 96%;
+.headerContainer1 {
+	top: 0; /* 페이지의 맨 위에 위치 */
+	position: fixed;
+	width: 100%;
+	height: 80px;
+	border-bottom: 1px #aaa solid;
+	z-index: 1000;
+	background-color: white;
+}
+
+.headerContainer2 {
+	width: 1100px;
 	margin: auto;
+	margin-top: 10px;
+	height: 60px;
+	margin-bottom: 10px;
 }
 
-.solid {
-	border: 1px solid white;
-	border-radius: 5px;
+.headerLogo {
+	display: inline-block;
+	text-decoration: none;
+	background-color: #bbb;
+	height: 60px;
+	width: 150px;
+	vertical-align: top; /* 또는 middle */
+	margin-bottom: 10px;
+}
+
+.headerBar {
+	width: 100px;
+	height: 60px;
+	display: inline-block;
+	display: grid;
+	place-items: center; /* 수평과 수직 모두 중앙 정렬 */
 	font-weight: bold;
-	background-color: rgba(0, 0, 0, 0.3);
+	color: black;
+	text-decoration: none;
 }
 
-header .flex {
-	display: flex;
-	justify-content: space-between;
-}
-
-header .headerBar {
-	min-width: 150px;
-	height: 30px;
-	margin: 0 10px;
-	color: white;
-	font-size: 20px;
-	text-align: center;
-}
-
-header .mainLogo {
-	min-width: 200px;
-	height: 30px;
-	margin: 0 20px;
-	color: white;
-	font-size: 20px;
-	text-align: center;
-}
-
-.menuBar {
-	overflow: hidden;
-	display: flex; 
-	min-width : 860px;
-	height: 32px;
-	min-width: 860px;
-}
-
-.menuBar:hover {
+.headerBar:hover {
+	color: gray;
 	cursor: pointer;
 }
 
-.hiddenMenuBar {
-	margin: 20px 0;
-	position: relative;
-	display: flex;
+.memberBar {
+	display: inline-block;
+	width: 160px;
+	height: 60px;
 }
 
-.hiddenMenu {
-	width: 150px;
-	margin: 10px;
+.menuBar1 {
+	margin-left: 50px;
+	margin-right: 155px;
+	width: 550px;
+	height: 60px;
+	display: inline-block;
 }
 
-header ul {
-	margin: 10px auto;
+.menuBar2 {
+	display: grid;
+	grid-template-columns: repeat(5, 100px);
+	gap: 10px;
+}
+
+.memberBtn1, .memberBtn2 {
+	display: inline-block;
+	width: 67px;
+	height: 30px;
+	color: #ccb389;
+	text-decoration: none;
+	border: 2px #ccb389 solid;
+	border-radius: 20px;
 	text-align: center;
-	padding: 0;
+	line-height: 30px;
+	font-size: 13px;
+	font-weight: bold;
 }
 
-header li {
-	list-style: none;
-	margin: 10px auto;
-	color: white;
+.memberBtn1 {
+	margin-right: 10px;
 }
+</style>
+<header>
+	<div class="headerContainer1">
+		<div class="headerContainer2">
 
-.hiddenMenuBar {
-	width: 860px;
-	border: none;
-	height: 0px;
-	overflow: hidden;
-	position: absolute;
-	transition: all 0.2s linear;
-}
-
-.menuBar:hover .hiddenMenuBar {
-	border-radius:10px;
-	height: 120px;
-	margin-top: 50px;
-	background-color: rgba(50, 50, 50, 0.5);
-}
-
-.menuBar:hover .hiddenMenuBar.cursor{
-	margin: 0;
-	height: 70px;
-	background-color: rgba(0, 0, 0, 0);
-}
-header ul hr{
-	width: 90%;
-	margin: 15px auto;
-}
-
-
-</style>	
-	<header>
-		<div class="flex">
-			<div class="mainLogo solid">
-				<a href="${path}">메인으로</a>
+			<a href="${path}"><div class="headerLogo">CENTUM PIANO</div></a>
+			<div class="menuBar1">
+				<div class="menuBar2">
+					<a href="${path}/" class="headerBar">ABOUT</a> <a class="headerBar">연습실
+						대여</a> <a class="headerBar">강습신청</a> <a
+						href="${path}/review/review_list" class="headerBar">리뷰</a> <a
+						class="headerBar">위치</a>
+				</div>
 			</div>
-		<div class="menuBar">
-
-			<div class="headerBar solid">ABOUT</div>
-			<div class="headerBar solid">연습실</div>
-			<div class="headerBar solid">문의</div>
-			<div class="headerBar solid">커뮤니티</div>
-			<div class="headerBar solid">오시는 길</div>
-
-			<div class="hiddenMenuBar cursor"></div>
-			<div class="hiddenMenuBar solid">
-				<div class="hiddenMenu solid">
-					<ul>
-						<li>학원 소개
-							<hr>
-						</li>
-						<li>교수진 소개</li>
-					</ul>
-				</div>
-				<div class="hiddenMenu solid">
-					<ul>
-						<li>예약 하기
-							<hr>
-						</li>
-						<li>구경 하기</li>
-					</ul>
-				</div>
-				<div class="hiddenMenu solid">
-					<ul>
-						<li>레슨 문의
-							<hr>
-						</li>
-						<li>학원 문의</li>
-					</ul>
-				</div>
-				<div class="hiddenMenu solid">
-					<ul>
-						<li>새로운 소식
-							<hr>
-						</li>
-						<li><a href="${path}/review/review_list">고객 리뷰</a></li>
-					</ul>
-				</div>
-				<div class="hiddenMenu solid">
-					<ul>
-						<li>길 찾기
-							<hr>
-						</li>
-						<li>지도 보기</li>
-					</ul>
-				</div>
+			<div class="memberBar">
+				<c:choose>
+					<c:when test="${!empty member}">
+						<a href="${path}/loginJoin/logOut"> <img alt="" src="">
+						</a>
+					</c:when>
+					<c:otherwise>
+						<a href="${path}/loginJoin/login" class="memberBtn1">로그인</a>
+						<a href="${path}/loginJoin/join" class="memberBtn2">회원가입</a>
+					</c:otherwise>
+				</c:choose>
 
 			</div>
-		</div>
-		<div class="mainLogo solid">
-			<c:choose>
-				<c:when test="${!empty member}">
-					<a href="${path}/loginJoin/logOut">로그아웃</a>
-				</c:when>
-				<c:otherwise>
-					<a href="${path}/loginJoin/login">로그인</a>
-					<a href="${path}/loginJoin/join">회원가입</a>
-				</c:otherwise>
-			</c:choose>
 		</div>
 	</div>
-		 
-		<hr>
-		<!-- 메뉴바와 같이 크기가 줄어들도록 --><!-- 메뉴바와 같이 크기가 줄어들도록 -->
-		<!-- 메뉴바와 같이 크기가 줄어들도록 --><!-- 메뉴바와 같이 크기가 줄어들도록 -->
-		<!-- 메뉴바와 같이 크기가 줄어들도록 --><!-- 메뉴바와 같이 크기가 줄어들도록 -->
-		<!-- 메뉴바와 같이 크기가 줄어들도록 --><!-- 메뉴바와 같이 크기가 줄어들도록 -->
-		
-	</header>
+</header>
