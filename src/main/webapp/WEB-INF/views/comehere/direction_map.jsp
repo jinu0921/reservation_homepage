@@ -1,12 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
 </head>
-<%@ include file="../MAIN/header.jsp"%>
 
 <style>
 .customoverlay {position:relative;bottom:85px;border-radius:6px;border: 1px solid #ccc;border-bottom:2px solid #ddd;float:left;}
@@ -17,7 +12,7 @@
 </style>
 
 <body>
-<div id="map" style="width:80%;height:350px;"></div>
+<div id="map" style="width:100%;height:100%; "></div>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=63c1486007c82b2a0e837b0f9be50e9e"></script>
 <script>
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 

@@ -92,7 +92,7 @@ body {
 <header>
 	<div class="headerContainer1">
 		<div class="headerContainer2">
-			<a href="${path}"><div class="headerLogo">CENTUM PIANO</div></a>
+			<a href="${path}"><img class="headerLogo" src="https://via.placeholder.com/500x300?text=Image1" /></a>
 			<div class="menuBar1">
 				<div class="menuBar2">
 					<a href="${path}/" class="headerBar">ABOUT</a> 

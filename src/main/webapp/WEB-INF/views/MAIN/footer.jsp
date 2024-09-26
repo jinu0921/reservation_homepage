@@ -38,7 +38,7 @@
     </style>
 <footer>
 	<div class="footerContainer">	
-	<a href="${path}" class="footerLogo">CENTUM PIANO</a><br/>
+	<a href="${path}"><img class="footerLogo" src="https://via.placeholder.com/500x300?text=Image1"/></a><br/>
 	<a class="footerInfo">상호명: 주식회사 더블유피티티 ㅣ 대표자: 김성식 ㅣ 사업자번호 : 532-88-00752<br/>
 EMAIL : withpiano@with-piano.com ㅣ 주소 : 경기도 고양시 덕양구 화중로 72, 케이탑리츠화정빌딩 12층</a><hr/>
 	<a class="copyright">Copyright  ©  2022. 주식회사 더블유피티티. All rights reserved.</a>
