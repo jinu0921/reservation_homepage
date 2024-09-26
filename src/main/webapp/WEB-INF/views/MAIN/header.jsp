@@ -92,14 +92,14 @@ body {
 <header>
 	<div class="headerContainer1">
 		<div class="headerContainer2">
-
 			<a href="${path}"><div class="headerLogo">CENTUM PIANO</div></a>
 			<div class="menuBar1">
 				<div class="menuBar2">
-					<a href="${path}/" class="headerBar">ABOUT</a> <a class="headerBar">연습실
-						대여</a> <a class="headerBar">강습신청</a> <a
-						href="${path}/review/review_list" class="headerBar">리뷰</a> <a
-						class="headerBar">위치</a>
+					<a href="${path}/" class="headerBar">ABOUT</a> 
+					<a class="headerBar">연습실 대여</a> 
+					<a class="headerBar">강습신청</a> 
+					<a href="${path}/review/review_list" class="headerBar">리뷰</a> 
+					<a href="${path}/comehere/direction" class="headerBar">위치</a>
 				</div>
 			</div>
 			<div class="memberBar">

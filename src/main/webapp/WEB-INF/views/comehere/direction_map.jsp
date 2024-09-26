@@ -17,8 +17,7 @@
 </style>
 
 <body>
-<h1>directions</h1>
-<div id="map" style="width:100%;height:350px;"></div>
+<div id="map" style="width:80%;height:350px;"></div>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=63c1486007c82b2a0e837b0f9be50e9e"></script>
 <script>
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 

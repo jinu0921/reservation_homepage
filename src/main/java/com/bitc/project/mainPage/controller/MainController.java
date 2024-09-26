@@ -17,9 +17,8 @@ public class MainController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	
-	@RequestMapping("direction")
-	public String direction() {
-		return"/comehere/direction";
+	@RequestMapping("/comehere/direction")
+	public void direction() {
 	}
 	
 	@RequestMapping("inform")
