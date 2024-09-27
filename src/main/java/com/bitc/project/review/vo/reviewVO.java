@@ -14,4 +14,5 @@ public class reviewVO {
 		private int viewcnt;
 		private int Rating;
 		private String nickname;
+		private int avgRating;
 	}

@@ -102,7 +102,8 @@ main {
 .mainSymbol {
 	height: 100px;
 	width: fit-content; /* 텍스트에 맞춰 너비 조정 */
-	margin: auto; text-align : center; /* 텍스트 중앙 정렬 */
+	margin: auto;
+	text-align: center; /* 텍스트 중앙 정렬 */
 	font-weight: bold;
 	font-size: 50px;
 	margin-bottom: 50px;
@@ -143,7 +144,7 @@ main {
 .mentorsL, .mentorsR {
 	height: 450px;
 	margin-bottom: 150px;
-	box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.5); /* 기본 그림자 */
+	box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.5);
 }
 
 .mentorImage {
@@ -212,7 +213,8 @@ main {
 }
 
 .mapIntro {
-	margin-top: 150px; width : 1100px;
+	margin-top: 150px;
+	width: 1100px;
 	height: 200px;
 	width: 1100px;
 }
@@ -231,35 +233,95 @@ main {
 	width: 100%;
 	height: 100px;
 	font-size: 15px;
-	color: #777; display : flex;
+	color: #777;
+	display: flex;
 	align-content: center;
 	justify-content: center;
 	display: flex;
 }
 
-        .carousel {
-            width: 500px;
-            height: 300px;
-            overflow: hidden;
-            position: relative;
-            margin: auto;
-        }
+.carousel {
+	width: 500px;
+	height: 500px;
+	overflow: hidden;
+	position: relative;
+	margin: auto;
+	float: right;
+	border-radius: 40px;
+}
 
-        .carousel img {
-            width: 100%;
-            height: 100%;
-            display: none;
-        }
+.carousel img {
+	width: 500px;
+	height: 300px;
+	border-radius: 40px;
+	    object-fit: cover;
+}
 
-        .carousel img.active {
-            display: block;
-        }
 
-    .carousel-button {
-		width: 100px;
-		height: 100px;
-		background-color: blue;
-        }
+.carousel-button {
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+	background-color: white;
+	border: none;
+	font-weight: bold;
+	font-size: 15px;
+	position: relative;
+	top:-25px;
+	margin-left: 100px;
+}
+
+.carousel-button:hover {
+	cursor: pointer;
+}
+
+.reviewContainer {
+	width: 100%;
+	height: 800px;
+	margin-top: 300px;
+}
+
+.prev{
+	margin-left: 165px;
+}
+
+.next{
+	margin-left: 70px;
+}
+
+.reviewTextContainer{
+width: 450px;
+height: 300px;
+display: inline-block;
+margin-top: 40px;
+margin-left: 50px;
+
+}
+
+.reviewTextContainer div:nth-child(1) {
+	font-size: 14px;
+}
+
+.reviewTextContainer div:nth-child(2) {
+	font-weight: bold;
+	font-size: 35px;
+	width: 375px;
+}
+
+.reviewTextContainer div:nth-child(3) {
+margin-top:15px;
+color: #999;
+font-size: 15px;
+}
+
+.carousel-inner {
+    display: flex;
+    width: 500%; /* 이미지 개수에 따라 크기 설정 */
+    transition: transform 0.5s ease-in-out;
+    border-radius: 40px;
+}
+
 </style>
 </head>
 <body>
@@ -310,21 +372,24 @@ main {
 			<div class="mentorContainer">
 				<div class="mentorContainer1">
 					<div class="mentorsL">
-						<img class="mentorImage" src="https://via.placeholder.com/500x300?text=Image1"></img>
+						<img class="mentorImage"
+							src="https://via.placeholder.com/500x300?text=Image1"></img>
 						<div class="mentorName">이진우</div>
 						<div class="mentorFeatures">
 							올림픽 우승<br />발롱도르 우승<br />월드컵 우승
 						</div>
 					</div>
 					<div class="mentorsL">
-						<img class="mentorImage" src="https://via.placeholder.com/500x300?text=Image3"></img>
+						<img class="mentorImage"
+							src="https://via.placeholder.com/500x300?text=Image3"></img>
 						<div class="mentorName">이진우2</div>
 						<div class="mentorFeatures">
 							올림픽 우승<br />발롱도르 우승<br />월드컵 우승
 						</div>
 					</div>
 					<div class="mentorsL">
-						<img class="mentorImage" src="https://via.placeholder.com/500x300?text=Image5"></img>
+						<img class="mentorImage"
+							src="https://via.placeholder.com/500x300?text=Image5"></img>
 						<div class="mentorName">이진우3</div>
 						<div class="mentorFeatures">
 							올림픽 우승<br />발롱도르 우승<br />월드컵 우승
@@ -336,14 +401,16 @@ main {
 					<div class="mentorIntro">총 발롱도르 20회 수상, 피아노 콩쿠르 200회 수상, 월드컵
 						2000회 수상, 최연소 피아노 국가대표 이진우 선수 존재</div>
 					<div class="mentorsR">
-						<img class="mentorImage" src="https://via.placeholder.com/500x300?text=Image2"></img>
+						<img class="mentorImage"
+							src="https://via.placeholder.com/500x300?text=Image2"></img>
 						<div class="mentorName">김동하</div>
 						<div class="mentorFeatures">
-							구구단 9단<br />태권도 9단
+							구구단 9단<br/>태권도 9단
 						</div>
 					</div>
 					<div class="mentorsR">
-						<img class="mentorImage" src="https://via.placeholder.com/500x300?text=Image4"></img>
+						<img class="mentorImage"
+							src="https://via.placeholder.com/500x300?text=Image4"></img>
 						<div class="mentorName">김지연</div>
 						<div class="mentorFeatures">
 							올림픽 우승<br />발롱도르 우승<br />월드컵 우승
@@ -360,39 +427,62 @@ main {
 				<%@ include file="/WEB-INF/views/comehere/direction_map.jsp"%>
 			</div>
 			<div class="reviewContainer">
+			<div class="reviewTextContainer">
+				<div>review</div>
+				<div>센텀 피아노 회원님들의 솔직한 리뷰</div>
+				<div>센텀 피아노 회원님들이 직접 남긴 진솔한 이야기들을 확인해 보세요. 그들의 성장과 감동의 순간이 가득합니다.</div>
+			</div>
 				<div class="carousel">
-					<img src="https://via.placeholder.com/500x300?text=Image1"
-						class="active"> <img
-						src="https://via.placeholder.com/500x300?text=Image2"> <img
-						src="https://via.placeholder.com/500x300?text=Image3"> <img
-						src="https://via.placeholder.com/500x300?text=Image4"> <img
-						src="https://via.placeholder.com/500x300?text=Image5">
+				    <div class="carousel-inner">
+					<img src="https://via.placeholder.com/500x300?text=Image1"/> <img src="https://via.placeholder.com/500x300?text=Image2"/> 
+						<img src="https://via.placeholder.com/500x300?text=Image3"/> 
+						<img src="https://via.placeholder.com/500x300?text=Image4"/> 
+						<img src="https://via.placeholder.com/500x300?text=Image5"/>
+				</div>
 					<button class="carousel-button prev" onclick="showPrev()">&#60;</button>
 					<button class="carousel-button next" onclick="showNext()">&#62;</button>
 				</div>
-
-				<script>
-					let currentIndex = 0;
-					const images = document.querySelectorAll('.carousel img');
-
-					function showNext() {
-						images[currentIndex].classList.remove('active');
-						currentIndex = (currentIndex + 1) % images.length; // 0 -> 1 -> 2 -> 3 -> 4 -> 0
-						images[currentIndex].classList.add('active');
-					}
-
-					function showPrev() {
-						images[currentIndex].classList.remove('active');
-						currentIndex = (currentIndex - 1 + images.length)
-								% images.length; // 4 -> 3 -> 2 -> 1 -> 0 -> 4
-						images[currentIndex].classList.add('active');
-					}
-				</script>
 			</div>
+
+			
+		</div>
 		</div>
 	</main>
 
 	<%@ include file="/WEB-INF/views/MAIN/footer.jsp"%>
+	<script>
+			let currentIndex = 0;
+			const carouselInner = document.querySelector('.carousel-inner');
+			const images = document.querySelectorAll('.carousel img');
+			const totalImages = images.length;
+			console.log("이진우1");
+
+			function showNext() {
+			    currentIndex = (currentIndex + 1) % totalImages;
+			    let a = `translateX(-\${currentIndex * 500}px)`;
+			    carouselInner.style.transform = a;
+			    resetAutoSlide();
+			    
+			}
+
+			function showPrev() {
+			    currentIndex = (currentIndex - 1) % totalImages;
+			    let a = `translateX(-\${currentIndex * 500}px)`;
+			    carouselInner.style.transform = a;
+			    resetAutoSlide();
+			}
+			
+			function startAutoSlide() {
+			    autoSlideInterval = setInterval(showNext, 4000);
+			}
+
+			// 자동 슬라이드 타이머 초기화 함수
+			function resetAutoSlide() {
+			    clearInterval(autoSlideInterval);
+			    startAutoSlide();  // 다시 자동 슬라이드 시작
+			}
+			startAutoSlide();
+			</script>
 	<c:if test="${!empty msg}">
 		<script>
 			window.onload = function() {

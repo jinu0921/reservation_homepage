@@ -32,8 +32,9 @@ review_list li a {
 }
 
 .review_table {
-	width: 1250px;
+	width: 100%;
 	margin: 0 auto;
+		border-top: 2px solid black;
 }
 
 .review_list_paging {
@@ -59,7 +60,7 @@ review_list li a {
 }
 
 .review_currentPage {
-	background-color: #0067f3;
+	background-color: #c7b199;
 }
 
 #review_currentPage_a {
@@ -72,13 +73,9 @@ table {
 
 /* ----------------위로는 페이징 아래는 테이블 ---------------------- */
 
-.review_table{
-	border-top: 2px solid black;
-	margin-top: 50px;
-}
 .review_table tr {
-	border-bottom: 2px solid #cccccc;
-	height: 300px;
+	border-bottom: 1px solid #ddd;
+	height: 225px;
 	    display: flex;
     justify-content: flex-start; /* 자식 요소들을 상단에 정렬 */
 }
@@ -101,7 +98,7 @@ cursor: pointer;
 }
 
 .review_table_left{
-width: 400px;
+width: 300px;
 padding-left:70px;
 padding-top:0px;
 }
@@ -119,7 +116,7 @@ font-size:14px;
 color: gray;
 }
 .review_rating {
-margin-top: 50px;
+margin-top: 25px;
 }
 
 .filled_star{
@@ -134,7 +131,7 @@ display: inline-block;
 }
 
 .review_table_right{
-width: 700px;
+width: 800px;
 }
 
 .review_title{
@@ -186,16 +183,27 @@ font-weight: bold;
 	float: right;
 }
 
+.review_list{
+	width: 1100px;
+	margin: 0 auto;
+	margin-top: 80px;
+}
 </style>
 </head>
 
 <review_list>
 <body>
+<div class="review_list">
 		<a href="${path}/review/review_write" class='review_write_a'>
 		<div class="review_write">
 				리뷰 작성
 				</div>
 		</a>
+		
+		<div>
+			${review.avgRating }DDD
+		</div>
+		
 	<table class="review_table">
 		<c:if test="${!empty reviewList}">
 			<c:forEach var="review" items="${reviewList}">
@@ -251,6 +259,7 @@ font-weight: bold;
 		</ul>
 	</div>
 
+</div>
 </body>
 </review_list>
 </html>

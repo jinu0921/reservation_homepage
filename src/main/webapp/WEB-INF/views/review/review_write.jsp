@@ -16,7 +16,7 @@
            }
 </style>
 
-<form method="POST">
+<form method="POST"  onsubmit="return validateForm();">
 <input class="form-control" name="memberNum" type="hidden" value="${member.memberNum}"  />
 		<div>
 			<h1>리뷰 작성</h1>
@@ -69,3 +69,21 @@
 	</form>
 
 <%@ include file="/WEB-INF/views/MAIN/footer.jsp"%>
+
+<script>
+    function validateForm() {
+        var title = document.getElementsByName("title")[0].value;
+        var content = document.getElementsByName("content")[0].value;
+        if (title.length > 200) {
+        	alert("제목은 200자 미만이여야 합니다.")
+        	return false;
+        }
+        
+        if (content.length > 65535) {
+        	alert("내용은 65535자 미만이여야 합니다.")
+        	return false;
+        }
+        return true;
+
+    }
+</script>

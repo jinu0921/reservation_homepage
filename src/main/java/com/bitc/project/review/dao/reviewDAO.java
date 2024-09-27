@@ -14,7 +14,11 @@ public interface reviewDAO {
 	@Select("SELECT r.review_num, r.title, r.content, r.regdate, r.viewcnt, r.rating, m.nickname FROM review r "
 			+ "NATURAL JOIN member m ORDER BY r.review_num DESC LIMIT #{startRow}, #{perPageNum}")
 	List<reviewVO> getReview(Criteria cri);
-
+	
+	@Select("SELECT AVG(r.rating) FROM review")
+	int getavgRating(Criteria cri);
+	
+	
 	@Insert("INSERT INTO review(member_num, title,content,rating) values(#{memberNum},#{title},#{content},#{rating})")
 	int writeReview(reviewVO vo);
 

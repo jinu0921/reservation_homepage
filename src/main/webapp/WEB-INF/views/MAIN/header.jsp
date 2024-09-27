@@ -105,7 +105,7 @@ body {
 			<div class="memberBar">
 				<c:choose>
 					<c:when test="${!empty member}">
-						<a href="${path}/loginJoin/logOut"> <img alt="" src="">
+						<a href="${path}/loginJoin/logOut"> 로그아웃<img alt="" src="">
 						</a>
 					</c:when>
 					<c:otherwise>
