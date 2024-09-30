@@ -8,16 +8,18 @@
         border-radius: 10px;
         margin : 0 auto;
    		margin-top:160px;
-        border: 1px solid black;
         padding: 50px;
     }
 
     /* 제목 스타일 */
     .reviewWriteContainer h1 {
-        font-size: 32px;
+        font-size: 45px;
         font-weight: bold;
-        margin-bottom: 30px;
         text-align: center;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        display: block;
+        letter-spacing: -3px;
     }
 
     /* 라벨 텍스트 스타일 */
@@ -51,7 +53,7 @@
         cursor: pointer;
     }
 
-    .rating input:checked ~ label {
+    .rating input:checked ~ label{
         color: gold;
     }
 
@@ -87,7 +89,13 @@
 .reviewWriteText{
 margin: 0 auto;
 display: inline-block;
-width: 400px;
+}
+
+.form-group:nth-child(1) {	
+text-align: center;
+margin:0 auto;
+font-size: 100px;
+color: yellow;
 }
 </style>
 
@@ -121,18 +129,18 @@ width: 400px;
             <input type="file" id="reviewImage" name="reviewImage" accept="image/*" multiple/>
         </div>
         <!-- 별점 -->
-        <div class="rating">
-            <input type="radio" id="star5" name="rating" value="5">
-            <label for="star5">★</label>
-            <input type="radio" id="star4" name="rating" value="4">
-            <label for="star4">★</label>
-            <input type="radio" id="star3" name="rating" value="3">
-            <label for="star3">★</label>
-            <input type="radio" id="star2" name="rating" value="2">
-            <label for="star2">★</label>
-            <input type="radio" id="star1" name="rating" value="1">
-            <label for="star1">★</label>
-        </div>
+<div class="rating">
+    <input type="radio" id="star5" name="rating" value="5" checked >
+    <label for="star5"><img src="${path}/resources/emptystar.png" alt="별 5개" class="star"></label>
+    <input type="radio" id="star4" name="rating" value="4">
+    <label for="star4"><img src="${path}/resources/emptystar.png" alt="별 4개" class="star"></label>
+    <input type="radio" id="star3" name="rating" value="3">
+    <label for="star3"><img src="${path}/resources/emptystar.png" alt="별 3개" class="star"></label>
+    <input type="radio" id="star2" name="rating" value="2">
+    <label for="star2"><img src="${path}/resources/emptystar.png" alt="별 2개" class="star"></label>
+    <input type="radio" id="star1" name="rating" value="1">
+    <label for="star1"><img src="${path}/resources/emptystar.png" alt="별 1개" class="star"></label>
+</div>
 
         <!-- 작성 완료 버튼 -->
         <input type="submit" value="작성완료" class="form-control btn btn-primary" />
@@ -145,7 +153,6 @@ width: 400px;
     function validateForm() {
         var title = document.getElementsByName("title")[0].value;
         var content = document.getElementsByName("content")[0].value;
-
         if (title.length > 200) {
             alert("제목은 200자 미만이어야 합니다.");
             return false;
@@ -155,7 +162,34 @@ width: 400px;
             alert("내용은 65535자 미만이어야 합니다.");
             return false;
         }
+        
 
         return true;
     }
+</script>
+<script>
+updateStarImages();
+    document.querySelectorAll('.rating input').forEach(function (input) {
+        input.addEventListener('change', function () {
+            updateStarImages();
+        });
+    });
+
+    function updateStarImages() {
+        const stars = document.querySelectorAll('.rating .star');
+        for (let index = 0; index < stars.length; index++) {
+            const input = document.querySelector(`input[id=star\${5-index}]`);
+            if (input.checked) {
+            	console.log("dsfasfsaf")
+                // 체크된 별과 그 이하의 별들을 금빛 이미지로 설정
+                for (let j = 4; j >= index; j--) {
+                    stars[j].src = '${path}/resources/yellowstar.png'; // 금빛 이미지
+                }
+                break; // 체크된 별을 찾았으므로 루프 종료
+            } else {
+                stars[index].src = '${path}/resources/emptystar.png'; // 기본 이미지
+            }
+        }
+    }
+
 </script>

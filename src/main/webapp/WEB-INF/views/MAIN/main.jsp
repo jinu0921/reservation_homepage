@@ -262,6 +262,11 @@ main {
 	height: 300px;
 	border-radius: 40px;
 	object-fit: cover;
+	margin-left: 100px;
+}
+
+.carousel img:nth-child(1){
+margin-left: 0px;
 }
 
 .carousel-button {
@@ -310,10 +315,10 @@ main {
 
 .reviewTextContainer div:nth-child(2) {
 	font-weight: bold;
-	font-size: 40px;
+	font-size: 44px;
 	width: 400px;
 	color: white;
-	letter-spacing: -4px;
+	letter-spacing: -6px;
 }
 
 .reviewTextContainer div:nth-child(3) {
@@ -365,7 +370,7 @@ main {
 
 .carousel-inner {
 	display: flex;
-	width: 500%; /* 이미지 개수에 따라 크기 설정 */
+	width: 2900px; /* 이미지 개수에 따라 크기 설정 */
 	transition: transform 0.5s ease-in-out;
 	border-radius: 40px;
 }
@@ -711,7 +716,8 @@ display:grid;
 
 		function showNext() {
 			currentIndex = (currentIndex + 1) % totalImages;
-			let a = `translateX(-\${currentIndex * 500}px)`;
+			let a = `translateX(-\${currentIndex * 600}px)`;
+			console.log(a);
 			carouselInner.style.transform = a;
 			resetAutoSlide();
 			updateIndicator(); // 추가된 코드
@@ -720,7 +726,7 @@ display:grid;
 
 		function showPrev() {
 			currentIndex = (currentIndex - 1 + totalImages) % totalImages;
-			let a = `translateX(-\${currentIndex * 500}px)`;
+			let a = `translateX(-\${currentIndex * 600}px)`;
 			carouselInner.style.transform = a;
 			updateIndicator(); // 추가된 코드
 			resetAutoSlide();
