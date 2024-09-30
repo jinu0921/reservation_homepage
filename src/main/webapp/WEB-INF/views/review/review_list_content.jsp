@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,9 +32,9 @@ review_list li a {
 }
 
 .review_table {
-	width: 100%;
+	width: 1100px;
 	margin: 0 auto;
-		border-top: 2px solid black;
+	border-top: 2px solid black;
 }
 
 .review_list_paging {
@@ -72,203 +72,233 @@ table {
 }
 
 /* ----------------위로는 페이징 아래는 테이블 ---------------------- */
-
 .review_table tr {
 	border-bottom: 1px solid #ddd;
 	height: 225px;
-	    display: flex;
-    justify-content: flex-start; /* 자식 요소들을 상단에 정렬 */
+	display: flex;
+	justify-content: flex-start; /* 자식 요소들을 상단에 정렬 */
 }
 
-.review_table_right:hover{
-cursor: pointer;
+.review_table_right:hover {
+	cursor: pointer;
 }
 
-.review_viewcnt{
-	margin-left:10px;
-	margin-bottom:10px;
-	font-size:14px;
+.review_viewcnt {
+	margin-left: 10px;
+	margin-bottom: 10px;
+	font-size: 14px;
 	display: inline-block;
 	color: gray;
+	letter-spacing: -1px;
 }
 
-.review_table_right:hover>.review_title,
-.review_table_right:hover>.review_content{
+.review_table_right:hover>.review_title, .review_table_right:hover>.review_content
+	{
 	text-decoration: underline;
 }
 
-.review_table_left{
-width: 300px;
-padding-left:70px;
-padding-top:0px;
+.review_table_left {
+	width: 300px;
+	padding-left: 70px;
+	padding-top: 0px;
 }
 
-.review_nickname{
-    margin-top: 70px;
-font-weight: bold;
-line-height:20px;
-font-size:20px;
-height: 20px;
+.review_nickname {
+	margin-top: 70px;
+	font-weight: bold;
+	line-height: 20px;
+	font-size: 20px;
+	height: 20px;
 }
 
-.review_regdate{
-font-size:14px;
-color: gray;
+.review_regdate {
+	font-size: 14px;
+	color: gray;
 }
+
 .review_rating {
-margin-top: 25px;
+	margin-top: 25px;
 }
 
-.filled_star{
-color: #FEFD48;
-font-weight: bold;
-line-height:20px;
-font-size:20px;
-display: inline-block;
-}
-.empty_star{
-display: inline-block;
+.filled_star {
+	color: #FEFD48;
+	font-weight: bold;
+	line-height: 20px;
+	font-size: 20px;
+	display: inline-block;
 }
 
-.review_table_right{
-width: 800px;
+.empty_star {
+	display: inline-block;
 }
 
-.review_title{
-width: 550px;
-margin-bottom: 30px;
-margin-top: 8px;
-height: 25px;
-text-overflow: ellipsis;  
-overflow: hidden;
-white-space: nowrap;
-font-size: 25px;
-line-height: 25px;
-font-weight: bold;
+.review_table_right {
+	width: 700px;
+}
 
+.review_title {
+	width: 550px;
+	margin-bottom: 30px;
+	margin-top: 8px;
+	height: 25px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	font-size: 25px;
+	line-height: 25px;
+	font-weight: bold;
 }
 
 .review_content {
-    width: 700px;
-    height: 45px;
-    font-size: 15px;
-    line-height: 15px;
-    display: -webkit-box;         
-    -webkit-line-clamp: 3;          
-    -webkit-box-orient: vertical;   
-    overflow: hidden;              
-    text-overflow: ellipsis;        
+	width: 700px;
+	height: 45px;
+	font-size: 15px;
+	line-height: 15px;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
-.review_write{
-	color: white;
-	width: 150px;
-	height:60px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: #bbb;
-	border-radius: 10px;
-	font-weight: bold;
-	
-}
-
-.review_write_a{
-	display:inline-block;
-	text-decoration: none;
-	width: 150px;
-	height:60px;
-	border-radius: 10px;
-	margin-top: 100px;	
-	float: right;
-}
-
-.review_list{
+.review_list {
 	width: 1100px;
 	margin: 0 auto;
 	margin-top: 80px;
+}
+
+.reviewUpperContainer{
+	width: 1100px;
+	height: 90px;
+	margin-top: 200px;
+}
+
+.rating {
+display: inline-block;
+height: 100%;
+line-height: 90px;
+font-size: 30px;
+font-weight: bold;
+margin-left: 25px;
+}
+
+.totalReview{
+display: inline-block;
+height: 100%;
+line-height: 90px;
+font-size: 20px;
+margin-left: 15px;
+color: #999;
+font-weight: bold;
+}
+
+.review_write_a{
+margin-right:20px;
+width:100px;
+text-align:center;
+margin-top:25px;
+border-radius:20px;
+border:2px solid #b59178;
+float:right;
+display: inline-block;
+height: 40px;
+line-height: 40px;
+color:#b59178;
+font-weight:bold;
+text-decoration: none;
 }
 </style>
 </head>
 
 <review_list>
 <body>
-<div class="review_list">
-		<a href="${path}/review/review_write" class='review_write_a'>
-		<div class="review_write">
-				리뷰 작성
-				</div>
-		</a>
-		
-		<div>
-			${review.avgRating }DDD
-		</div>
-		
-	<table class="review_table">
-		<c:if test="${!empty reviewList}">
-			<c:forEach var="review" items="${reviewList}">
+	<div class="review_list">
 
-				<tr onclick="detail('${review.reviewNum}');" class="review_table_tr">
-					<td class="review_table_left">
-						<div class="review_nickname">${review.nickname}</div>
-						<div class="review_regdate"><fmt:formatDate value="${review.regdate}" pattern="yyyy.MM.dd" /></div>
-						</td>
-					<td class="review_table_right">
-						<div class="review_rating">
-						<div class="review_viewcnt">조회수 ${review.viewcnt}</div> <br/>
-							<c:forEach var="i" begin="1" end="${review.rating}">
-							<div class="filled_star">★</div></c:forEach>
-							<c:forEach var="i" begin="1" end="${5-review.rating}">
-							<div class="empty_star">☆</div></c:forEach>
-							
-						</div>
-						<div class="review_title">${review.title}</div>
-						 <div class="review_content">${review.content}</div>
-					</td>
-				</tr>
-
-
-			</c:forEach>
-		</c:if>
-	</table>
-	<div class="review_list_paging">
-		<ul>
-			<c:if test="${pm.first}">
-				<li><a href="${path}/review/review_list?page=1">&lt;&lt;</a></li>
-			</c:if>
-			<c:if test="${pm.prev}">
-				<li><a href="${path}/review/review_list?page=${pm.startPage-5}">&lt;</a></li>
-			</c:if>
-			<c:forEach var="i" begin="${pm.startPage}" end="${pm.endPage}">
-				<c:choose>
-					<c:when test="${pm.cri.page eq i}">
-						<li class="review_currentPage"><a id="review_currentPage_a">${i}</a></li>
-					</c:when>
-					<c:otherwise>
-						<li><a href="${path}/review/review_list?page=${i}">${i}</a></li>
-					</c:otherwise>
-				</c:choose>
-
-			</c:forEach>
-			<c:if test="${pm.next}">
-				<li><a href="${path}/review/review_list?page=${pm.endPage+1}">&gt;</a></li>
-			</c:if>
-			<c:if test="${pm.last}">
-				<li><a href="${path}/review/review_list?page=${pm.maxPage}">&gt;&gt;</a></li>
-			</c:if>
-		</ul>
+		<div class="reviewUpperContainer">
+		<div class="rating">별점 ${avgRating}</div>
+		<div class="totalReview">리뷰 ${pm.totalCount}개</div>
+		<a href="${path}/review/review_write" class='review_write_a'> 리뷰 작성 </a>
 	</div>
 
-</div>
+
+		<table class="review_table">
+			<c:if test="${!empty reviewList}">
+				<c:forEach var="review" items="${reviewList}">
+
+					<tr onclick="detail('${review.reviewNum}');"
+						class="review_table_tr">
+						<td class="review_table_left">
+							<div class="review_nickname">${review.nickname}</div>
+							<div class="review_regdate">
+								<fmt:formatDate value="${review.regdate}" pattern="yyyy.MM.dd" />
+							</div>
+						</td>
+						<td class="review_table_right">
+							<div class="review_rating">
+								<div class="review_viewcnt">조회수 ${review.viewcnt}</div>
+								<br />
+								<c:forEach var="i" begin="1" end="${review.rating}">
+									<div class="filled_star">★</div>
+								</c:forEach>
+								<c:forEach var="i" begin="1" end="${5-review.rating}">
+									<div class="empty_star">☆</div>
+								</c:forEach>
+
+							</div>
+							<div class="review_title">${review.title}</div>
+							<div class="review_content">${review.content}</div>
+						<c:if test="${!empty review.imageUrl}">
+						    <c:forEach var="reviewImage" items="${review.imageUrl}">
+						        <img src="${reviewImage}" alt="리뷰 이미지" />
+						    </c:forEach>
+						</c:if>
+
+						</td>
+					</tr>
+
+
+				</c:forEach>
+			</c:if>
+		</table>
+		<div class="review_list_paging">
+			<ul>
+				<c:if test="${pm.first}">
+					<li><a href="${path}/review/review_list?page=1">&lt;&lt;</a></li>
+				</c:if>
+				<c:if test="${pm.prev}">
+					<li><a
+						href="${path}/review/review_list?page=${pm.startPage-5}">&lt;</a></li>
+				</c:if>
+				<c:forEach var="i" begin="${pm.startPage}" end="${pm.endPage}">
+					<c:choose>
+						<c:when test="${pm.cri.page eq i}">
+							<li class="review_currentPage"><a id="review_currentPage_a">${i}</a></li>
+						</c:when>
+						<c:otherwise>
+							<li><a href="${path}/review/review_list?page=${i}">${i}</a></li>
+						</c:otherwise>
+					</c:choose>
+
+				</c:forEach>
+				<c:if test="${pm.next}">
+					<li><a href="${path}/review/review_list?page=${pm.endPage+1}">&gt;</a></li>
+				</c:if>
+				<c:if test="${pm.last}">
+					<li><a href="${path}/review/review_list?page=${pm.maxPage}">&gt;&gt;</a></li>
+				</c:if>
+			</ul>
+		</div>
+
+	</div>
 </body>
 </review_list>
 </html>
 <c:if test="${!empty msg}">
-    <script>
-        window.onload = function() {
-            alert('${msg}');
-        }
-    </script>
+	<script>
+		window.onload = function() {
+			alert('${msg}');
+		}
+	</script>
 </c:if>
 <script type="text/javascript">
 	function detail(rno) {

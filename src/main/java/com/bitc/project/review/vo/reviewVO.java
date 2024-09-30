@@ -1,6 +1,7 @@
 package com.bitc.project.review.vo;
 
 import java.util.Date;
+import java.util.List;
 
 import lombok.Data;
 
@@ -14,5 +15,5 @@ public class reviewVO {
 		private int viewcnt;
 		private int Rating;
 		private String nickname;
-		private int avgRating;
+		private List<String> ImageUrl;
 	}

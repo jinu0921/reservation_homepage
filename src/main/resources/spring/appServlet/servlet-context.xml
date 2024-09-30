@@ -16,5 +16,15 @@
     </bean>
 		
 			<context:component-scan base-package="com.bitc.project" />
+			
+				<bean id="uploadDir" class="java.lang.String">
+		<constructor-arg value="C:\\Temp\\upload"/>	
+	</bean>
+		
+			<bean id="multipartResolver" 
+			    class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="10485760" />  <!-- 10MB -->
+		<!-- <beans:property name="defaultEncoding" value="utf-8"/> -->
+	</bean>
 		
 </beans>

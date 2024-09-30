@@ -81,6 +81,8 @@ main {
 	margin-top: 90px;
 	border-radius: 20px;
 	background-color: rgba(255, 255, 255, 0.2);
+	display: block;
+	text-decoration: none;
 }
 
 .overlay {
@@ -125,6 +127,7 @@ main {
 .mentorContainer {
 	width: 960px;
 	margin: 0 auto;
+	height: 1750px;
 }
 
 .mentorContainer1, .mentorContainer2 {
@@ -145,6 +148,10 @@ main {
 	height: 450px;
 	margin-bottom: 150px;
 	box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.5);
+}
+
+.mentorsR:nth-child(3) {
+	margin-bottom: 180px;
 }
 
 .mentorImage {
@@ -213,7 +220,7 @@ main {
 }
 
 .mapIntro {
-	margin-top: 150px;
+	margin-top: 250px;
 	width: 1100px;
 	height: 200px;
 	width: 1100px;
@@ -246,7 +253,7 @@ main {
 	overflow: hidden;
 	position: relative;
 	margin: auto;
-	float: right;
+	float: left;
 	border-radius: 40px;
 }
 
@@ -254,21 +261,20 @@ main {
 	width: 500px;
 	height: 300px;
 	border-radius: 40px;
-	    object-fit: cover;
+	object-fit: cover;
 }
-
 
 .carousel-button {
 	width: 50px;
 	height: 50px;
 	border-radius: 50px;
-	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+	box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.7);
 	background-color: white;
 	border: none;
 	font-weight: bold;
 	font-size: 15px;
 	position: relative;
-	top:-25px;
+	top: -25px;
 	margin-left: 100px;
 }
 
@@ -278,25 +284,24 @@ main {
 
 .reviewContainer {
 	width: 100%;
-	height: 800px;
-	margin-top: 300px;
+	height: 700px;
+	margin-top: 350px;
 }
 
-.prev{
+.prev {
 	margin-left: 165px;
 }
 
-.next{
+.next {
 	margin-left: 70px;
 }
 
-.reviewTextContainer{
-width: 450px;
-height: 300px;
-display: inline-block;
-margin-top: 40px;
-margin-left: 50px;
-
+.reviewTextContainer {
+	width: 450px;
+	height: 250px;
+	display: inline-block;
+	margin-top: 40px;
+	margin-left: 50px;
 }
 
 .reviewTextContainer div:nth-child(1) {
@@ -305,22 +310,187 @@ margin-left: 50px;
 
 .reviewTextContainer div:nth-child(2) {
 	font-weight: bold;
-	font-size: 35px;
-	width: 375px;
+	font-size: 40px;
+	width: 400px;
+	color: white;
+	letter-spacing: -4px;
 }
 
 .reviewTextContainer div:nth-child(3) {
-margin-top:15px;
-color: #999;
-font-size: 15px;
+	margin-top: 20px;
+	color: #bbb;
+	font-size: 17px;
+	color: #bbb;
+}
+
+.reviewMainText {
+	width: 500px;
+	height: 400px;
+	float: right;
+	margin-top: 150px;
+	font-size: 35px;
+	font-weight: bold;
+	color: white;
+	letter-spacing: -4px;
+	margin-left: 50px;
+}
+
+.reviewLink {
+	width: 160px;
+	height: 50px;
+	border: 1px solid white;
+	color: white;
+	font-weight: bold;
+	border-radius: 30px;
+	text-align: center;
+	line-height: 50px;
+	float: right;
+	font-size: 20px;
+	margin-top: 80px;
+	margin-right: 180px;
+	letter-spacing: -2px;
+	text-decoration: none;
+}
+
+.reviewMainText div:nth-child(1), .reviewMainText div:nth-child(3) {
+	color: #999;
+	font-size: 60px;
+}
+
+.reviewMainText div:nth-child(4) {
+	font-size: 17px;
+	font-weight: normal;
+	letter-spacing: -1px;
 }
 
 .carousel-inner {
-    display: flex;
-    width: 500%; /* 이미지 개수에 따라 크기 설정 */
-    transition: transform 0.5s ease-in-out;
-    border-radius: 40px;
+	display: flex;
+	width: 500%; /* 이미지 개수에 따라 크기 설정 */
+	transition: transform 0.5s ease-in-out;
+	border-radius: 40px;
 }
+
+.lessonContainer {
+	width: 1100px;
+	text-align: center;
+	margin-top: 350px;
+}
+
+.lessonMainText {
+	font-size: 50px;
+	margin-bottom: 15px;
+	font-weight: bold;
+}
+
+.lessonSubText {
+	font-size: 18px;
+	color: #888;
+}
+
+.lessonBar {
+	margin-top: 100px;
+	display: grid;
+	grid-template-columns: repeat(4, 250px);
+	gap: 33px;
+	display: grid;
+}
+
+.lessonContent div:nth-child(1) {
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 65px;
+}
+
+.lessonContent div:nth-child(2) {
+	font-size: 16px;
+	margin-bottom: 30px;
+	color: #777;
+}
+
+.lessonContent div:nth-child(3) {
+	width: 250px;
+	height: 250px;
+}
+
+.lessonContent div:nth-child(3) img {
+	width: 100%;
+	height: 100%;
+}
+
+.informationLink {
+	display: block;
+	width: 160px;
+	height: 50px;
+	border: 1px solid black;
+	text-align: center;
+	color: black;
+	line-height: 50px;
+	text-decoration: none;
+	font-weight: bold;
+	border-radius: 30px;
+	font-size: 20px;
+	letter-spacing: -2px;
+	margin: 0 auto;
+	margin-top: 60px;
+}
+
+#mentor {
+	margin-top: 0px;
+}
+
+.lessonContentLine {
+	width: 100%;
+	position: absolute;
+	background-color: #d0936d;
+	height: 5px;
+	z-index: 2;
+	top: 6270px;
+}
+
+.reviewBackground {
+	width: 100%;
+	position: absolute;
+	background-color: #444;
+	height: 860px;
+	z-index: -1;
+	top: 4840px;
+}
+
+.roomContainer {
+	margin-top: 250px;
+}
+
+.carousel-indicator {
+	display: flex;
+	margin-top: 10px;
+}
+
+.indicator {
+	width: 25px; /* 길이 조정 */
+	height: 5px; /* 두께 조정 */
+	background-color: white; /* 배경색 */
+	border-radius: 5px;
+	transition: transform 0.5s ease-in-out;
+	position: absolute;
+	margin-left: 165px;
+}
+
+.indicatorBlock {
+	height: 5px;
+	background-color: #999;
+	border-radius: 5px;
+}
+
+.indicatorBlock:nth-child(1){
+}
+
+.indicatorContainer {
+	margin-left: 165px;
+display:grid;
+	grid-template-columns: repeat(5, 25px);
+	gap: 10px;
+}
+
 
 </style>
 </head>
@@ -328,6 +498,8 @@ font-size: 15px;
 	<%@ include file="/WEB-INF/views/MAIN/header.jsp"%>
 
 	<main>
+		
+		
 		<div class="mainImage">
 			<div class="overlay"></div>
 		</div>
@@ -335,12 +507,13 @@ font-size: 15px;
 		<div class="mentorBackground">
 			<div class="mentorBackgroundText">mentors</div>
 		</div>
-
+		<div class="reviewBackground"></div>
+		<div class="lessonContentLine"></div>
 		<div class="mainBody">
 			<div class="mainImageContent">
 				<div class="MIC1">"프리미엄 피아노 학원"</div>
 				<div class="MIC2">CENTUM PIANO</div>
-				<div class="MIC3">강습신청 →</div>
+				<a class="MIC3" href="${path }/lessonReg/lesson">강습신청 →</a>
 			</div>
 
 			<div class="mainSymbol">"센텀피아노: 당신의 음악, 그 이상을 위해"</div>
@@ -366,6 +539,8 @@ font-size: 15px;
 					<div class="MI2">평균 4.9점이 넘는 높은 만족도</div>
 				</div>
 			</div>
+			<a href="${path }/information/inform" class="informationLink">더
+				많은 정보</a>
 			<div class="mentorIntroContainer">
 				<div class="mentorIntroSymbol">뛰어난 명품 강사진</div>
 			</div>
@@ -405,7 +580,7 @@ font-size: 15px;
 							src="https://via.placeholder.com/500x300?text=Image2"></img>
 						<div class="mentorName">김동하</div>
 						<div class="mentorFeatures">
-							구구단 9단<br/>태권도 9단
+							구구단 9단<br />태권도 9단
 						</div>
 					</div>
 					<div class="mentorsR">
@@ -416,8 +591,11 @@ font-size: 15px;
 							올림픽 우승<br />발롱도르 우승<br />월드컵 우승
 						</div>
 					</div>
+
 				</div>
 			</div>
+			<a href="${path }/information/inform" class="informationLink"
+				id="mentor">강사진 정보</a>
 			<div class="mapIntro">
 				<div>센텀 피아노 지점 찾기</div>
 				<div>언제 어디서나 센텀 피아노와 함께!</div>
@@ -426,63 +604,139 @@ font-size: 15px;
 			<div class="mapContainer">
 				<%@ include file="/WEB-INF/views/comehere/direction_map.jsp"%>
 			</div>
+			<a href="${path }/comehere/direction" class="informationLink"
+				id="map">센텀피아노 위치</a>
+
 			<div class="reviewContainer">
-			<div class="reviewTextContainer">
-				<div>review</div>
-				<div>센텀 피아노 회원님들의 솔직한 리뷰</div>
-				<div>센텀 피아노 회원님들이 직접 남긴 진솔한 이야기들을 확인해 보세요. 그들의 성장과 감동의 순간이 가득합니다.</div>
-			</div>
-				<div class="carousel">
-				    <div class="carousel-inner">
-					<img src="https://via.placeholder.com/500x300?text=Image1"/> <img src="https://via.placeholder.com/500x300?text=Image2"/> 
-						<img src="https://via.placeholder.com/500x300?text=Image3"/> 
-						<img src="https://via.placeholder.com/500x300?text=Image4"/> 
-						<img src="https://via.placeholder.com/500x300?text=Image5"/>
+				<div class="reviewTextContainer">
+					<div></div>
+					<div>센텀 피아노 회원님들의 솔직한 리뷰</div>
+					<div>센텀 피아노 회원님들이 직접 남긴 진솔한 이야기들을 확인해 보세요. 그들의 성장과 감동의 순간이
+						가득합니다.</div>
 				</div>
+				<div class="reviewMainText">
+					<div>"</div>
+					<div>센텀 피아노는 가히 한국 최고의 피아노 학원이라 말할 수 있겠습니다.</div>
+					<div>"</div>
+					<div>이진우 (최연소 피아노 국가대표)</div>
+
+					<a href="${path }/review/review_list" class="reviewLink">리뷰
+						보러가기 </a>
+				</div>
+				<br />
+				<div class="carousel">
+					<div class="carousel-inner">
+						<img src="https://via.placeholder.com/500x300?text=Image1" /> <img
+							src="https://via.placeholder.com/500x300?text=Image2" /> <img
+							src="https://via.placeholder.com/500x300?text=Image3" /> <img
+							src="https://via.placeholder.com/500x300?text=Image4" /> <img
+							src="https://via.placeholder.com/500x300?text=Image5" />
+					</div>
 					<button class="carousel-button prev" onclick="showPrev()">&#60;</button>
 					<button class="carousel-button next" onclick="showNext()">&#62;</button>
+					<div class="carousel-indicator">
+						<span class="indicator"></span>
+						<div class="indicatorContainer">
+							<div class="indicatorBlock"></div>
+							<div class="indicatorBlock"></div>
+							<div class="indicatorBlock"></div>
+							<div class="indicatorBlock"></div>
+							<div class="indicatorBlock"></div>
+						</div>
+
+					</div>
 				</div>
 			</div>
 
-			
+
+			<div class="lessonContainer">
+				<div class="lessonMainText">빠르고 간편한 예약</div>
+				<div class="lessonSubText">온라인으로 손쉽게 예약하세요. 실시간으로 예약 가능 여부를
+					확인할 수 있습니다.</div>
+				<div class="lessonBar">
+					<div class="lessonContent">
+						<div>STEP 1</div>
+						<div>제 경험상 올래시장에 먹거리 많아서 볼거리도 많은데 야시장에서 맥주라도 한잔 하려면 걸어갈 수 있는
+							거리의 숙소가 좋겠더라구요</div>
+						<div>
+							<img src="https://via.placeholder.com/500x300?text=Image1">
+						</div>
+					</div>
+					<div class="lessonContent">
+						<div>STEP 2</div>
+						<div>제 경험상 올래시장에 먹거리 많아서 볼거리도 많은데 야시장에서 맥주라도 한잔 하려면 걸어갈 수 있는
+							거리의 숙소가 좋겠더라구요</div>
+						<div>
+							<img src="https://via.placeholder.com/500x300?text=Image2">
+						</div>
+					</div>
+					<div class="lessonContent">
+						<div>STEP 3</div>
+						<div>제 경험상 올래시장에 먹거리 많아서 볼거리도 많은데 야시장에서 맥주라도 한잔 하려면 걸어갈 수 있는
+							거리의 숙소가 좋겠더라구요</div>
+						<div>
+							<img src="https://via.placeholder.com/500x300?text=Image3">
+						</div>
+					</div>
+					<div class="lessonContent">
+						<div>STEP 4</div>
+						<div>제 경험상 올래시장에 먹거리 많아서 볼거리도 많은데 야시장에서 맥주라도 한잔 하려면 걸어갈 수 있는
+							거리의 숙소가 좋겠더라구요</div>
+						<div>
+							<img src="https://via.placeholder.com/500x300?text=Image4">
+						</div>
+					</div>
+				</div>
+			</div>
+			<a href="${path }/lessonReg/lesson" class="informationLink"
+				id="roomReg">예약하러 가기</a>
 		</div>
-		</div>
+
+		<div class="roomContainer"></div>
 	</main>
 
 	<%@ include file="/WEB-INF/views/MAIN/footer.jsp"%>
 	<script>
-			let currentIndex = 0;
-			const carouselInner = document.querySelector('.carousel-inner');
-			const images = document.querySelectorAll('.carousel img');
-			const totalImages = images.length;
-			console.log("이진우1");
+		let currentIndex = 0;
+		const carouselInner = document.querySelector('.carousel-inner');
+		const images = document.querySelectorAll('.carousel img');
+		const totalImages = images.length;
+		console.log("이진우1");
 
-			function showNext() {
-			    currentIndex = (currentIndex + 1) % totalImages;
-			    let a = `translateX(-\${currentIndex * 500}px)`;
-			    carouselInner.style.transform = a;
-			    resetAutoSlide();
-			    
-			}
+		function updateIndicator() {
+			const indicator = document.querySelector('.indicator');
+			let a = `translateX(\${currentIndex * 35}px)`;
+			indicator.style.transform = a;
+		}
 
-			function showPrev() {
-			    currentIndex = (currentIndex - 1) % totalImages;
-			    let a = `translateX(-\${currentIndex * 500}px)`;
-			    carouselInner.style.transform = a;
-			    resetAutoSlide();
-			}
-			
-			function startAutoSlide() {
-			    autoSlideInterval = setInterval(showNext, 4000);
-			}
+		function showNext() {
+			currentIndex = (currentIndex + 1) % totalImages;
+			let a = `translateX(-\${currentIndex * 500}px)`;
+			carouselInner.style.transform = a;
+			resetAutoSlide();
+			updateIndicator(); // 추가된 코드
 
-			// 자동 슬라이드 타이머 초기화 함수
-			function resetAutoSlide() {
-			    clearInterval(autoSlideInterval);
-			    startAutoSlide();  // 다시 자동 슬라이드 시작
-			}
-			startAutoSlide();
-			</script>
+		}
+
+		function showPrev() {
+			currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+			let a = `translateX(-\${currentIndex * 500}px)`;
+			carouselInner.style.transform = a;
+			updateIndicator(); // 추가된 코드
+			resetAutoSlide();
+		}
+
+		function startAutoSlide() {
+			autoSlideInterval = setInterval(showNext, 4000);
+		}
+
+		// 자동 슬라이드 타이머 초기화 함수
+		function resetAutoSlide() {
+			clearInterval(autoSlideInterval);
+			startAutoSlide(); // 다시 자동 슬라이드 시작
+		}
+		startAutoSlide();
+	</script>
 	<c:if test="${!empty msg}">
 		<script>
 			window.onload = function() {

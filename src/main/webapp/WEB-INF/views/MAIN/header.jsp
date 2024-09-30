@@ -12,7 +12,7 @@ body {
 	position: fixed;
 	width: 100%;
 	height: 80px;
-	border-bottom: 1px #aaa solid;
+	border-bottom: 1px #ddd solid;
 	z-index: 1000;
 	background-color: white;
 }
@@ -88,17 +88,47 @@ body {
 .memberBtn1 {
 	margin-right: 10px;
 }
+
+.rightFixed{
+position: fixed;
+display:grid;
+grid-template-rows: repeat(3, 80px);
+gap:30px;
+right: 100px;
+bottom: 200px;
+z-index: 9999;
+}
+
+.rightFixed a{
+	width: 80px;
+}
+
+.rightFixed a img{
+	width: 100%;
+	height: 100%;
+}
 </style>
 <header>
+	<div class="rightFixed">
+			<a>
+				<img src="https://via.placeholder.com/500x300?text=Image1">
+			</a>
+			<a>
+				<img src="https://via.placeholder.com/500x300?text=Image2">
+			</a>
+			<a>
+				<img src="https://via.placeholder.com/500x300?text=Image3">
+			</a>
+		</div>
 	<div class="headerContainer1">
 		<div class="headerContainer2">
 			<a href="${path}"><img class="headerLogo" src="https://via.placeholder.com/500x300?text=Image1" /></a>
 			<div class="menuBar1">
 				<div class="menuBar2">
 					<a href="${path}/" class="headerBar">ABOUT</a> 
-					<a class="headerBar">연습실 대여</a> 
-					<a class="headerBar">강습신청</a> 
-					<a href="${path}/review/review_list" class="headerBar">리뷰</a> 
+					<a class="headerBar" href="${path}/roomReg/room">연습실 대여</a> 
+					<a class="headerBar" href="${path}/lessonReg/lesson">강습신청</a> 
+					<a href="${path}/review/review_list" class="headerBar">리뷰</a>
 					<a href="${path}/comehere/direction" class="headerBar">위치</a>
 				</div>
 			</div>

@@ -21,9 +21,12 @@ public class MainController {
 	public void direction() {
 	}
 	
-	@RequestMapping("inform")
-	public String inform() {
-		return"/information/inform";
+	@RequestMapping("/lessonReg/lesson")
+	public void lessonReg() {
+	}
+	
+	@RequestMapping("information/inform")
+	public void inform() {
 	}
 	
 	@RequestMapping("lesson")
@@ -31,14 +34,12 @@ public class MainController {
 		return"/lessonReg/lesson";
 	}
 	
-	@RequestMapping("review_list")
-	public String review() {
-		return"/review/review_list";
+	@RequestMapping("review/review_list")
+	public void review() {
 	}
 	
-	@RequestMapping("room")
-	public String room() {
-		return"/roomReg/room";
+	@RequestMapping("roomReg/room")
+	public void room() {
 	}
 	
 }
