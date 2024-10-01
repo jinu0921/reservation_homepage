@@ -13,22 +13,22 @@ import com.bitc.project.review.vo.reviewVO;
 
 public interface reviewDAO {
 
-	@Select("SELECT r.review_num, r.title, r.content, r.regdate, r.viewcnt, r.rating, m.nickname FROM review r "
+	@Select("SELECT r.review_num, r.title, r.content, r.regdate, r.viewcnt, r.rating, m.uname FROM review r "
 			+ "NATURAL JOIN member m ORDER BY r.review_num DESC LIMIT #{startRow}, #{perPageNum}")
 	List<reviewVO> getReview(Criteria cri);
 	
 	@Select("SELECT AVG(rating) FROM review")
-	float getavgRating();
+	Float getavgRating();
 	
 	
 	@Insert("INSERT INTO review(member_num, title,content,rating) values(#{memberNum},#{title},#{content},#{rating})")
 	int writeReview(reviewVO vo);
 
-	@Select("SELECT r.review_num, r.member_num, r.title, r.regdate, r.viewcnt, r.content, r.rating, m.nickname FROM review r "
+	@Select("SELECT r.review_num, r.member_num, r.title, r.regdate, r.viewcnt, r.content, r.rating, m.uname FROM review r "
 			+ "NATURAL JOIN member m " + "WHERE r.review_num=#{reviewNum}")
 	reviewVO detailReview(int reviewNum);
 
-	@Select("SELECT r.review_num, r.member_num, r.title, r.regdate, r.viewcnt, r.content, r.rating, m.nickname FROM review r "
+	@Select("SELECT r.review_num, r.member_num, r.title, r.regdate, r.viewcnt, r.content, r.rating, m.uname FROM review r "
 			+ "NATURAL JOIN member m WHERE review_num=#{reviewNum}")
 	reviewVO findReviewNum(int reviewNum);
 

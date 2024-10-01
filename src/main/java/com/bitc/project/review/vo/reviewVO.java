@@ -14,6 +14,6 @@ public class reviewVO {
 		private Date regdate;
 		private int viewcnt;
 		private int Rating;
-		private String nickname;
+		private String uname;
 		private List<String> ImageUrl;
 	}

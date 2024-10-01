@@ -4,14 +4,12 @@
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 	<!DOCTYPE html>
-	<html>
 	<head>
 	<meta charset="UTF-8">
 	<style type="text/css">
 	.currentPage {
 		color: red;
 	}
-	
 	review_list li {
 		background-color: white;
 		list-style-type: none;
@@ -155,7 +153,7 @@
 	color:#555;
 	letter-spacing: -1px;
 		width: 700px;
-		height: 51px;
+		height: 53px;
 		font-size: 17px;
 		line-height: 17px;
 		display: -webkit-box;
@@ -243,6 +241,7 @@
 	    height: 230px;
 	    margin-bottom: 30px;
 	    left: 30px;
+	    overflow: hidden;
 	}
 	
 	.reviewImageContainer {
@@ -301,7 +300,16 @@ display: inline-flex;
 			<div class="reviewUpperContainer">
 			<div class="rating">
 			<img src="${path }/resources/yellowstar.png">
-			별점 ${avgRating}</div>
+			별점 
+			<c:choose>
+    <c:when test="${!empty avgRating}">
+        ${avgRating}
+    </c:when>
+    <c:otherwise>
+        0.0
+    </c:otherwise>
+</c:choose>
+			</div>
 			<div class="totalReview">리뷰 ${pm.totalCount}개</div>
 			<a href="${path}/review/review_write" class='review_write_a'> 리뷰 작성 </a>
 		</div>
@@ -314,7 +322,7 @@ display: inline-flex;
 						<tr 
 							class="review_table_tr">
 							<td class="review_table_left">
-								<div class="review_nickname">${review.nickname}</div>
+								<div class="review_nickname">${review.uname}</div>
 								<div class="review_regdate">
 									<fmt:formatDate value="${review.regdate}" pattern="yyyy.MM.dd" />
 								</div>
@@ -384,8 +392,10 @@ display: inline-flex;
 					<c:if test="${pm.next}">
 						<li><a href="${path}/review/review_list?page=${pm.endPage+1}">&gt;</a></li>
 					</c:if>
+					<c:if test="${pm.endPage !=0 }">
 					<c:if test="${pm.last}">
-						<li><a href="${path}/review/review_list?page=${pm.maxPage}">&gt;&gt;</a></li>
+						<li><a href="${path}/review/review_list?page=${pm.maxPage}">&gt;&gt; ${pm }</a></li>
+					</c:if>
 					</c:if>
 				</ul>
 			</div>
@@ -393,7 +403,6 @@ display: inline-flex;
 		</div>
 	</body>
 	</review_list>
-	</html>
 	
 	<c:if test="${!empty msg}">
 		<script>
@@ -451,6 +460,8 @@ function overFunction(reviewNum){
 			checkNext(reviewNum, ImageLen);
 			
 		}
+		
+
 		
 		function checkPrev(reviewNum){
 					const prev = document.querySelector(`.RICprev.review-\${reviewNum}`);

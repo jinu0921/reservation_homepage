@@ -2,6 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/MAIN/header.jsp"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+	<!DOCTYPE html>
+	<head>
 <style>
 .detail_filled_star {
 	display: inline-block;
@@ -12,10 +14,19 @@
 	display: inline-block;
 }
 
-.review_detail_box {
+.reviewContainer{
+	margin: 0 auto;
 	width: 900px;
-	// border: 1px solid black;
+	text-align: center;
+}
+.review_detail_content{
+text-align: left;
+}
+
+.review_detail_box {
+	width: 100%;
 	display: flex;
+margin-top:100px;
 	justify-content: center; /* 가로 중앙 정렬 */
 	   flex-direction: column; /* 자식 요소들을 세로로 정렬 */
 	  border-bottom: 2px solid black;
@@ -30,18 +41,37 @@ border-bottom: 2px solid #ccc;
 }
 
 .review_detail_body{
-margin: 300px 50px;
-margin-top: 100px;
+margin: 150px 50px;
+margin-top: 200px;
+font-size: 16px;
 }
 
 .review_detail_title{
 	font-weight: bold;
-	font-size: 26px;
+	font-size: 34px;
 	margin-top:20px;
+	letter-spacing: -2px;
+	text-align: left;
+	margin-bottom: 20px;
 }
 
 .review_detail_rating{
+margin-left:20px;
 	display: inline-block;	
+	width: 150px;
+	height: 20px;
+}
+
+.review_detail_rating img{
+	width: 20px;
+	height: 20px;
+}
+
+.review_detail_nickname{
+margin-left:15px;
+margin-top:17px;
+font-weight: bold;	
+display: inline-block;
 }
 
 .review_detail_regdate{
@@ -49,10 +79,12 @@ margin-top: 100px;
 	direction:rtl;
 	float: right;
 	margin-right: 10px;
+	color:#888;
 }
 
 
 .review_detail_viewcnt{
+color:#888;
 	display: inline-block;
 	float: right;
 	margin-right: 25px;
@@ -71,24 +103,33 @@ display: inline-block;
 margin-bottom:10px;
 } 
 
-.review_detail_nickname{
-margin-top:17px;
+
+.DetailReviewContainer{
+width: 900px;
+display: grid;
+	grid-template-columns: repeat(5, 160px);
+	gap: 20px;
 }
 
+.DetailImage{
+width:150px;
+height: 150px;
+border-radius: 20px;
+}
 </style>
-
-<review_detail>
+	</head>
+<div class="reviewContainer">
 <div class="review_detail_box">
 	<div class="review_detail_head">
 		<div class="review_detail_title">${reviewDetail.title}</div>
 	<div class="review_detail_head_left">
-		<div class="review_detail_nickname">${reviewDetail.nickname}</div>
+		<div class="review_detail_nickname">${reviewDetail.uname}</div>
 		<div class="review_detail_rating">
 			<c:forEach var="i" begin="1" end="${reviewDetail.rating}">
-				<div class="detail_filled_star">★</div>
+				<img class="detail_filled_star" src="${path }/resources/yellowstar.png">
 			</c:forEach>
 			<c:forEach var="i" begin="1" end="${5-reviewDetail.rating}">
-				<div class="detail_empty_star">☆</div>
+				<img class="detail_empty_star" src="${path }/resources/emptystar.png">
 			</c:forEach>
 		</div>
 	</div>
@@ -105,6 +146,14 @@ margin-top:17px;
 		<div class="review_detail_content">${reviewDetail.content}</div>
 	</div>
 	
+	<c:if test="${!empty reviewDetail.imageUrl}">
+	<div class="DetailReviewContainer">
+		    <c:forEach var="reviewImage" items="${reviewDetail.imageUrl}">
+									<img src="${path}/displayFile?fileName=${reviewImage}" class="DetailImage">
+							    </c:forEach>
+							    </div>
+					</c:if>
+	
 	<div>
 		<c:if test="${member.memberNum==reviewDetail.memberNum}">
 	<form action="${path}/review/review_delete" method="post"
@@ -119,9 +168,7 @@ margin-top:17px;
 		</c:if>
 		</div>
 </div>
-
-</review_detail>
-	
+</div>
 
 <%@ include file="/WEB-INF/views/review/review_list_content.jsp"%>
 <%@ include file="/WEB-INF/views/MAIN/footer.jsp"%>
@@ -131,4 +178,6 @@ margin-top:17px;
             alert('${msg}');
         }
     </script>
+    
+
 </c:if>

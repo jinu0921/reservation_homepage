@@ -1,14 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/MAIN/header.jsp"%>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
     /* 폼 전체 스타일 */
     .reviewWriteContainer {
-        width: 1100px;
+        width: 900px;
         border-radius: 10px;
         margin : 0 auto;
    		margin-top:160px;
         padding: 50px;
+    font-family: 'Noto Sans', sans-serif;
     }
 
     /* 제목 스타일 */
@@ -17,7 +20,7 @@
         font-weight: bold;
         text-align: center;
         margin: 0 auto;
-        margin-bottom: 30px;
+        margin-bottom: 60px;
         display: block;
         letter-spacing: -3px;
     }
@@ -44,14 +47,28 @@
     .rating {
         display: inline-block;
         direction: rtl;
-        margin-bottom: 30px;
+        margin-bottom: 100px;
+        margin-top: 30px;
+        width: 400px;
+        text-align: center;
+        margin-left: 250px;
     }
 
     .rating label {
-        font-size: 30px;
+        font-size: 20px;
         color: #ddd;
         cursor: pointer;
     }
+    
+     .rating label img{
+     	width: 50px;
+     	height: 50px;
+     	margin-left: 20px;
+     }
+     
+     .rating label:nth-child(1) img{
+     	margin-left: 0px;
+     }
 
     .rating input:checked ~ label{
         color: gold;
@@ -63,17 +80,25 @@
 
     /* 버튼 스타일 */
     .btn-primary {
-        background-color: #007bff;
+        background-color: #89480a;
         color: white;
-        font-size: 16px;
+        font-size: 20px;
         padding: 12px;
         border-radius: 8px;
         border: none;
         cursor: pointer;
+        width: 600px;
+        height: 100px;
+        margin:0 auto;
+        display: block;	
+        margin-top: 100px;
+        font-weight: bold;
+         transition: background-color 0.2s ease, transform 0.3s ease; 
     }
 
     .btn-primary:hover {
-        background-color: #0056b3;
+        background-color: #9A5B1B;
+        transform: scale(1.05); /* hover 시 크기 증가 */
     }
 
     /* 전반적인 폼 구성 */
@@ -81,9 +106,8 @@
         margin-bottom: 20px;
     }
     
-    .form-group:nth-child(3) {
+    .form-control.c{
 		resize: none;
-		background-color: blue;
 }
 
 .reviewWriteText{
@@ -91,44 +115,73 @@ margin: 0 auto;
 display: inline-block;
 }
 
-.form-group:nth-child(1) {	
-text-align: center;
+.form-control.a{
+display:block;
 margin:0 auto;
-font-size: 100px;
-color: yellow;
+text-align:center;
+	background-color: #c7b199;
+	color: white;
+	font-size: 18px;	
+	font-weight: bold;
+	width: auto;
 }
+
+#reviewImage{
+	display: none;
+}
+
+.reviewImageLabel div:nth-child(1){
+	width: 375px;
+	margin: 0 auto;
+	text-align: center;
+	height: 60px;
+	border: 2px solid #b59178;
+	color: #b59178;
+	font-weight: bold;
+	font-size: 23px;
+	line-height: 60px;
+	transition: transform 0.2s ease-in-out;
+	border-radius: 14px;
+}
+
+.form-control.c{
+	background-color: #efefef;
+}
+
+input::placeholder, textarea::placeholder{
+	letter-spacing: -1px;
+	color: #bbb;
+	font-weight: bold;
+}
+
+
+.reviewImageLabel div:nth-child(1):hover{
+	cursor: pointer;
+	 transform: scale(1.05);
+	}
+	
+	.reviewImageLabel div:nth-child(2) img{
+	width: 160px;
+	height: 130px;
+	border-radius: 15px;
+	margin-left: 25px;
+	margin-top: 20px;
+	}
+	
+	.reviewImageLabel div:nth-child(2) img:nth-child(1),.reviewImageLabel div:nth-child(2) img:nth-child(6){
+	margin-left: 0px;
+	}
+	
 </style>
 
 <div class="reviewWriteContainer">
     <form method="POST" onsubmit="return validateForm();" enctype="multipart/form-data">
                 <input class="form-control" type="hidden" value="${member.memberNum}" name="memberNum" />
         <h1 class="reviewWriteText">센텀피아노 리뷰 작성</h1>
-
-        <!-- 작성자 -->
         <div class="form-group">
-            <label class="form-label">작성자</label>
-            <input class="form-control" type="text" value="${member.nickname}" readonly />
+            <input class="form-control a" type="text" value="${member.uname} 님" readonly />
         </div>
 
-        <!-- 제목 -->
-        <div class="form-group">
-            <label class="form-label">제목 ${member.memberNum}</label>
-            <input class="form-control" name="title" type="text" />
-        </div>
-        
-        
-
-        <!-- 내용 -->
-        <div class="form-group">
-            <label class="form-label">내용</label>
-            <textarea class="form-control" name="content" rows="8"></textarea>
-        </div>
-
-		<div class="form-group">
-            <label class="form-label">첨부파일</label>
-            <input type="file" id="reviewImage" name="reviewImage" accept="image/*" multiple/>
-        </div>
-        <!-- 별점 -->
 <div class="rating">
     <input type="radio" id="star5" name="rating" value="5" checked >
     <label for="star5"><img src="${path}/resources/emptystar.png" alt="별 5개" class="star"></label>
@@ -141,6 +194,28 @@ color: yellow;
     <input type="radio" id="star1" name="rating" value="1">
     <label for="star1"><img src="${path}/resources/emptystar.png" alt="별 1개" class="star"></label>
 </div>
+        <!-- 작성자 -->
+
+        <!-- 제목 -->
+        <div class="form-group">
+            <input class="form-control b" name="title" type="text" placeholder="리뷰의 제목을 입력해 주세요!"/>
+        </div>
+        
+        
+
+        <!-- 내용 -->
+        <div class="form-group">
+            <textarea class="form-control c" name="content" rows="8" placeholder="센텀피아노에서 느낀 바에 대해 솔직하게 평가해주세요!"></textarea>
+        </div>
+<div class="form-group">
+    <input type="file" id="reviewImage" name="reviewImage" accept="image/*" multiple/>
+    <label class="reviewImageLabel" for="reviewImage">
+        <div>사진 첨부하기 0/10</div>
+        <div id="previewContainer"></div>
+    </label>
+</div>
+<p id="error" style="color: red;"></p> <!-- 오류 메시지를 표시할 요소 -->
+
 
         <!-- 작성 완료 버튼 -->
         <input type="submit" value="작성완료" class="form-control btn btn-primary" />
@@ -148,6 +223,7 @@ color: yellow;
 </div>
 
 <%@ include file="/WEB-INF/views/MAIN/footer.jsp"%>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 <script>
     function validateForm() {
@@ -157,17 +233,30 @@ color: yellow;
             alert("제목은 200자 미만이어야 합니다.");
             return false;
         }
+        if (title.length < 1) {
+            alert("제목을 작성해주세요.");
+            return false;
+        }
 
         if (content.length > 65535) {
             alert("내용은 65535자 미만이어야 합니다.");
             return false;
         }
         
-
+        if (content.length <1) {
+            alert("내용을 작성해주세요.");
+            return false;
+        }
         return true;
     }
-</script>
-<script>
+    
+    
+        
+
+        
+        
+
+
 updateStarImages();
     document.querySelectorAll('.rating input').forEach(function (input) {
         input.addEventListener('change', function () {
@@ -180,7 +269,6 @@ updateStarImages();
         for (let index = 0; index < stars.length; index++) {
             const input = document.querySelector(`input[id=star\${5-index}]`);
             if (input.checked) {
-            	console.log("dsfasfsaf")
                 // 체크된 별과 그 이하의 별들을 금빛 이미지로 설정
                 for (let j = 4; j >= index; j--) {
                     stars[j].src = '${path}/resources/yellowstar.png'; // 금빛 이미지
@@ -191,5 +279,45 @@ updateStarImages();
             }
         }
     }
+
+</script>
+
+<script>
+const fileInput = document.getElementById('reviewImage');
+const labelDiv = document.querySelector(".reviewImageLabel div"); // 개수 표시용 div
+const previewContainer = document.getElementById('previewContainer'); // 미리보기 컨테이너
+const errorMessage = document.getElementById('error'); // 오류 메시지 표시
+const maxFiles = 10;
+
+fileInput.addEventListener('change', function() {
+    previewContainer.innerHTML = ''; // 이전 미리보기 초기화
+    const files = fileInput.files;
+
+    // 파일 수 제한 체크
+    if (files.length > maxFiles) {
+        errorMessage.textContent = `최대 \${maxFiles}개의 이미지만 선택할 수 있습니다.`;
+        fileInput.value = ''; // 선택된 파일 초기화
+        labelDiv.textContent = `사진 첨부하기 0/10`; // 초기화 시 텍스트도 리셋
+        return; // 추가 진행을 멈춤
+    } else {
+        errorMessage.textContent = ''; // 오류 메시지 초기화
+    }
+
+    for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            const img = document.createElement('img');
+            img.src = e.target.result; // 파일의 데이터 URL
+            previewContainer.appendChild(img); // 미리보기 추가
+        };
+
+        reader.readAsDataURL(file); // 파일 읽기
+    }
+
+    // 현재 선택된 파일 개수 표시
+    labelDiv.textContent = `사진 첨부하기 \${files.length}/\${maxFiles}`;
+});
 
 </script>

@@ -1,11 +1,9 @@
 package com.bitc.project.loginJoin.dto;
 
-import lombok.Data;
 
-@Data
-public class loginJoinDTO {
-	private int memberNum;
-	private String id;
-	private String password;
-	private String nickname;
+import com.bitc.project.common.vo.MemberVO;
+
+
+public class loginJoinDTO extends MemberVO{
+
 }

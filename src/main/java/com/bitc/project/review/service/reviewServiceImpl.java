@@ -72,7 +72,7 @@ public class reviewServiceImpl {
 		return new PageMaker(cri, rd.Count());
 	}
 
-	public float getAvgRating() {
+	public Float getAvgRating() {
 		return rd.getavgRating();
 	}
 
@@ -91,6 +91,16 @@ public class reviewServiceImpl {
 			newRv.add(rvList);
 		}
 		return newRv;
+		
+	}
+
+	public reviewVO getReviewImagerv(reviewVO rv) {
+		List<String> ImageUrl = rd.getImageUrl(rv.getReviewNum());
+		 if (ImageUrl == null) {
+	            ImageUrl = new ArrayList<>();
+	        }
+		 rv.setImageUrl(ImageUrl);
+		 return rv;
 		
 	}
 }

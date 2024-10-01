@@ -31,11 +31,14 @@ public class reviewController {
 		PageMaker pm = rs.getPageMaker(cri);
 		model.addAttribute("pm",pm);
 		rv = rs.getReviewImage(rv);
-		System.out.println("이진우!!"+rv);
 		model.addAttribute("reviewList",rv);
-		float avgRating = rs.getAvgRating();
-		avgRating = (float) (Math.round(avgRating * 100.0) / 100.0);
+		Float avgRating = rs.getAvgRating();
+		if(avgRating==null) {
+			model.addAttribute("avgRating",avgRating);	
+		}else {
+		avgRating = (float)(Math.round(avgRating * 100.0) / 100.0);
 		model.addAttribute("avgRating",avgRating);
+		}
 	}
 	
 	
@@ -43,11 +46,21 @@ public class reviewController {
 	@GetMapping("review_detail")
 	public void review_detail(Model model, int reviewNum, Criteria cri) {
 		rs.updateViewCnt(reviewNum);
-		model.addAttribute("reviewDetail",rs.detailReview(reviewNum));
+		reviewVO reviewDetail = rs.detailReview(reviewNum);
+		rs.getReviewImagerv(reviewDetail);
+		model.addAttribute("reviewDetail",reviewDetail);
 		List<reviewVO> rv =  rs.getReview(cri);
 		PageMaker pm = rs.getPageMaker(cri);
+		rv = rs.getReviewImage(rv);
 		model.addAttribute("reviewList",rv);
 		model.addAttribute("pm",pm);
+		Float avgRating = rs.getAvgRating();
+		if(avgRating==null) {
+			model.addAttribute("avgRating",avgRating);	
+		}else {
+		avgRating = (float)(Math.round(avgRating * 100.0) / 100.0);
+		model.addAttribute("avgRating",avgRating);
+		}
 	}
 	
 	
@@ -78,6 +91,7 @@ public class reviewController {
 	@GetMapping("review_update")
 	public String G_review_update(int reviewNum, Model model, HttpSession s, RedirectAttributes ra) {
 		reviewVO rv = rs.findReviewNum(reviewNum);
+		rv = rs.getReviewImagerv(rv);
 		model.addAttribute("reviewUpdate", rv);
 		 return "review/review_update";
 	}
