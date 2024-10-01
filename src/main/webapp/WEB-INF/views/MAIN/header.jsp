@@ -126,7 +126,7 @@ z-index: 9999;
 			<a href="${path}"><img class="headerLogo" src="https://via.placeholder.com/500x300?text=Image1" /></a>
 			<div class="menuBar1">
 				<div class="menuBar2">
-					<a href="${path}/" class="headerBar">ABOUT</a> 
+					<a href="${path}/information/inform" class="headerBar">ABOUT</a> 
 					<a class="headerBar" href="${path}/roomReg/room">연습실 대여</a> 
 					<a class="headerBar" href="${path}/lessonReg/lesson">강습신청</a> 
 					<a href="${path}/review/review_list" class="headerBar">리뷰</a>

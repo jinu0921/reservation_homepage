@@ -109,6 +109,7 @@ width: 900px;
 display: grid;
 	grid-template-columns: repeat(5, 160px);
 	gap: 20px;
+	margin-bottom: 40px;
 }
 
 .DetailImage{
@@ -116,6 +117,29 @@ width:150px;
 height: 150px;
 border-radius: 20px;
 }
+
+#deleteBtn{
+	display: none;
+}
+
+.deleteLabel, .updateBtn{
+margin-top:30px;
+	width:100px;
+	text-align:center;
+	border-radius:20px;
+	border:2px solid #b59178;
+	float:right;
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	color:#b59178;
+	font-weight:bold;
+	text-decoration: none;
+			margin-right: 20px;
+}
+
+
+
 </style>
 	</head>
 <div class="reviewContainer">
@@ -154,20 +178,21 @@ border-radius: 20px;
 							    </div>
 					</c:if>
 	
-	<div>
+	
+</div>
 		<c:if test="${member.memberNum==reviewDetail.memberNum}">
+		<div>
 	<form action="${path}/review/review_delete" method="post"
 		onsubmit="return confirm('정말 삭제하시겠습니까?');">
 		<input type="hidden" name="reviewNum"
 			value="${reviewDetail.reviewNum}" /> <input type="submit"
-			value="삭제" />
+			value="삭제" id="deleteBtn"/><label for="deleteBtn" class="deleteLabel">삭제</label>
 	</form>	
 
 	<a
-		href="${path}/review/review_update?reviewNum=${reviewDetail.reviewNum}">수정</a>
-		</c:if>
+		href="${path}/review/review_update?reviewNum=${reviewDetail.reviewNum}" class="updateBtn">수정</a>
 		</div>
-</div>
+		</c:if>
 </div>
 
 <%@ include file="/WEB-INF/views/review/review_list_content.jsp"%>
